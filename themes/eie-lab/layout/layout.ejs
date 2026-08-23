@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="<%= config.language || 'zh-CN' %>">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="<%= config.description || '' %>">
+  <title><% if (page.title) { %><%= page.title %> | <% } %><%= config.title %></title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@500;700&display=swap" rel="stylesheet">
+  <%- css('css/style') %>
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="<%- url_for('/') %>" aria-label="<%= config.title %>">
+        <span class="brand-mark">L</span>
+        <span>
+          <strong><%= config.title %></strong>
+          <small>Electronic Information Engineering</small>
+        </span>
+      </a>
+      <nav class="nav">
+        <a href="<%- url_for('/') %>">首页</a>
+        <a href="<%- url_for('/archives/') %>">归档</a>
+        <a href="<%- url_for('/notes/') %>">笔记</a>
+        <a href="<%- url_for('/projects/') %>">项目</a>
+        <a href="<%- url_for('/about/') %>">关于</a>
+      </nav>
+    </header>
+
+    <main>
+      <%- body %>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <strong><%= config.title %></strong>
+        <span>Signal notes, circuit logs, and engineering traces.</span>
+      </div>
+      <a href="<%- url_for('/links/') %>">Links</a>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<section class="hero">
+  <div class="hero-copy">
+    <p class="eyebrow">Personal Engineering Notebook</p>
+    <h1>把电路、信号、代码和实验记录整理成一个长期可维护的小站。</h1>
+    <p class="hero-text">这里预留给电子信息工程方向的课程笔记、项目复盘、硬件调试、通信实验和 GNSS 学习记录。内容你以后慢慢换，结构我先搭好。</p>
+    <div class="hero-actions">
+      <a class="button primary" href="<%- url_for('/notes/') %>">进入笔记</a>
+      <a class="button ghost" href="<%- url_for('/projects/') %>">查看项目</a>
+    </div>
+  </div>
+  <aside class="signal-panel" aria-label="engineering dashboard">
+    <div class="panel-top">
+      <span>LAB STATUS</span>
+      <b>ONLINE</b>
+    </div>
+    <div class="waveform">
+      <span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <div class="metric-grid">
+      <div><span>Signal</span><strong>DSP</strong></div>
+      <div><span>Circuit</span><strong>PCB</strong></div>
+      <div><span>Device</span><strong>MCU</strong></div>
+      <div><span>Field</span><strong>GNSS</strong></div>
+    </div>
+  </aside>
+</section>
+
+<section class="section-grid">
+  <div class="section-main">
+    <div class="section-heading">
+      <p class="eyebrow">Recent Updates</p>
+      <h2>最近记录</h2>
+    </div>
+    <div class="post-list">
+      <% site.posts.sort('date', -1).limit(6).forEach(function(post) { %>
+        <article class="post-card">
+          <time datetime="<%= post.date.format('YYYY-MM-DD') %>"><%= post.date.format('YYYY.MM.DD') %></time>
+          <h3><a href="<%- url_for(post.path) %>"><%= post.title %></a></h3>
+          <p><%= strip_html(post.excerpt || post.content).replace(/\s+/g, ' ').substring(0, 118) %></p>
+        </article>
+      <% }) %>
+    </div>
+  </div>
+
+  <aside class="module-rail">
+    <div class="section-heading compact">
+      <p class="eyebrow">Reserved Modules</p>
+      <h2>专业模块</h2>
+    </div>
+    <a class="module-card" href="<%- url_for('/notes/') %>">
+      <span>01</span>
+      <strong>信号与系统</strong>
+      <small>频域分析、滤波器、采样与处理</small>
+    </a>
+    <a class="module-card" href="<%- url_for('/notes/') %>">
+      <span>02</span>
+      <strong>嵌入式与硬件</strong>
+      <small>单片机、传感器、PCB、调试记录</small>
+    </a>
+    <a class="module-card" href="<%- url_for('/projects/') %>">
+      <span>03</span>
+      <strong>通信与 GNSS</strong>
+      <small>通信原理、定位实验、数据处理</small>
+    </a>
+  </aside>
+</section>

@@ -3,9 +3,9 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Lee520150's Blog
+title: Lee520150 Lab
 subtitle: ''
-description: 'A personal blog built with Hexo and GitHub Pages.'
+description: 'Electronic information engineering notes, projects, and field logs.'
 keywords:
 author: Lee520150
 language: zh-CN
@@ -96,7 +96,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: eie-lab
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
