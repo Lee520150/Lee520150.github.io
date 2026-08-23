@@ -1,28 +1,61 @@
 <section class="hero">
   <div class="hero-copy">
-    <p class="eyebrow">Personal Engineering Notebook</p>
-    <h1>把电路、信号、代码和实验记录整理成一个长期可维护的小站。</h1>
-    <p class="hero-text">这里预留给电子信息工程方向的课程笔记、项目复盘、硬件调试、通信实验和 GNSS 学习记录。内容你以后慢慢换，结构我先搭好。</p>
+    <p class="eyebrow">Personal Blog / Electronic Information Engineering</p>
+    <h1>把专业学习、板级设计和生活碎片，整理成自己的长期档案。</h1>
+    <p class="hero-text">这里不是只放课程笔记的地方。它会同时收纳电子信息工程相关的学习记录、PCB 设计过程、项目复盘，以及摄影、模型和日常观察。</p>
     <div class="hero-actions">
-      <a class="button primary" href="<%- url_for('/notes/') %>">进入笔记</a>
-      <a class="button ghost" href="<%- url_for('/projects/') %>">查看项目</a>
+      <a class="button primary" href="<%- url_for('/notes/') %>">学习笔记</a>
+      <a class="button ghost" href="<%- url_for('/life/') %>">生活记录</a>
     </div>
   </div>
-  <aside class="signal-panel" aria-label="engineering dashboard">
+  <aside class="signal-panel" aria-label="site modules">
     <div class="panel-top">
-      <span>LAB STATUS</span>
-      <b>ONLINE</b>
+      <span>SITE MAP</span>
+      <b>V0.2</b>
     </div>
-    <div class="waveform">
-      <span></span><span></span><span></span><span></span><span></span><span></span>
+    <div class="orbit-map">
+      <span class="core">BLOG</span>
+      <span class="node n1">Notes</span>
+      <span class="node n2">PCB</span>
+      <span class="node n3">Projects</span>
+      <span class="node n4">Life</span>
     </div>
     <div class="metric-grid">
-      <div><span>Signal</span><strong>DSP</strong></div>
-      <div><span>Circuit</span><strong>PCB</strong></div>
-      <div><span>Device</span><strong>MCU</strong></div>
-      <div><span>Field</span><strong>GNSS</strong></div>
+      <div><span>Study</span><strong>Notes</strong></div>
+      <div><span>Hardware</span><strong>PCB</strong></div>
+      <div><span>Build</span><strong>Projects</strong></div>
+      <div><span>Personal</span><strong>Life</strong></div>
     </div>
   </aside>
+</section>
+
+<section class="module-section">
+  <div class="section-heading">
+    <p class="eyebrow">Reserved Modules</p>
+    <h2>先把栏目分清楚，内容以后慢慢填。</h2>
+  </div>
+  <div class="module-grid">
+    <a class="module-card feature-notes" href="<%- url_for('/notes/') %>">
+      <span>01</span>
+      <strong>学习笔记</strong>
+      <small>电路、信号与系统、通信原理、单片机、DSP、FPGA、GNSS 等课程和复习材料。</small>
+    </a>
+    <a class="module-card feature-pcb" href="<%- url_for('/pcb/') %>">
+      <span>02</span>
+      <strong>PCB 设计</strong>
+      <small>原理图、封装、布局布线、打样、焊接、调试问题和版本记录。</small>
+    </a>
+    <a class="module-card feature-projects" href="<%- url_for('/projects/') %>">
+      <span>03</span>
+      <strong>项目作品</strong>
+      <small>课程设计、硬件小作品、嵌入式实验、通信系统和完整项目复盘。</small>
+    </a>
+    <a class="module-card feature-life" href="<%- url_for('/life/') %>">
+      <span>04</span>
+      <strong>生活与作品</strong>
+      <small>摄影、模型、旅行、读书、随笔，以及不那么工程但很个人的内容。</small>
+    </a>
+  </div>
 </section>
 
 <section class="section-grid">
@@ -44,23 +77,11 @@
 
   <aside class="module-rail">
     <div class="section-heading compact">
-      <p class="eyebrow">Reserved Modules</p>
-      <h2>专业模块</h2>
+      <p class="eyebrow">Quick Access</p>
+      <h2>快速入口</h2>
     </div>
-    <a class="module-card" href="<%- url_for('/notes/') %>">
-      <span>01</span>
-      <strong>信号与系统</strong>
-      <small>频域分析、滤波器、采样与处理</small>
-    </a>
-    <a class="module-card" href="<%- url_for('/notes/') %>">
-      <span>02</span>
-      <strong>嵌入式与硬件</strong>
-      <small>单片机、传感器、PCB、调试记录</small>
-    </a>
-    <a class="module-card" href="<%- url_for('/projects/') %>">
-      <span>03</span>
-      <strong>通信与 GNSS</strong>
-      <small>通信原理、定位实验、数据处理</small>
-    </a>
+    <a class="rail-link" href="<%- url_for('/about/') %>">关于我和这个站点</a>
+    <a class="rail-link" href="<%- url_for('/archives/') %>">按时间查看全部文章</a>
+    <a class="rail-link" href="<%- url_for('/links/') %>">常用链接与工具</a>
   </aside>
 </section>
