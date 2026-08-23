@@ -504,23 +504,32 @@ p {
   line-height: 1.9;
 }
 
-.life-slider {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: minmax(420px, 54vw);
+.life-marquee {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  overflow: hidden;
+  padding: 14px 0 58px;
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+.life-track {
+  display: flex;
+  width: max-content;
   gap: 22px;
-  overflow-x: auto;
-  overscroll-behavior-inline: contain;
-  scroll-snap-type: inline mandatory;
-  padding: 14px 0 26px;
-  scrollbar-width: thin;
+  animation: lifeSlide 30s linear infinite;
+  will-change: transform;
+}
+
+.life-marquee:hover .life-track {
+  animation-play-state: paused;
 }
 
 .life-card {
   position: relative;
+  width: min(760px, 56vw);
   min-height: 420px;
   overflow: hidden;
-  scroll-snap-align: start;
+  flex: 0 0 auto;
   border: 1px solid var(--line);
   border-radius: 18px;
   background: #fff;
@@ -634,10 +643,13 @@ p {
   border-right: 2px solid #111;
 }
 
-.life-hint {
-  margin: 0 0 70px;
-  color: var(--muted);
-  font-size: 13px;
+@keyframes lifeSlide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-50% - 11px));
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -706,11 +718,8 @@ p {
     font-size: 40px;
   }
 
-  .life-slider {
-    grid-auto-columns: minmax(280px, 86vw);
-  }
-
   .life-card {
+    width: 86vw;
     min-height: 360px;
   }
 }
