@@ -1,43 +1,43 @@
-<section class="hero bento">
-  <article class="hero-card bento-card span-2">
-    <p class="eyebrow">Personal Blog</p>
-    <h1>工程、设计和生活，都应该被好好归档。</h1>
-    <p class="hero-text">这里会放电子信息工程的学习笔记、PCB 设计过程、项目复盘，也会放摄影、模型和一些日常记录。首页先保持克制，内容以后慢慢长出来。</p>
-    <div class="hero-actions">
-      <a class="button primary" href="<%- url_for('/notes/') %>">进入笔记</a>
-      <a class="button ghost" href="<%- url_for('/life/') %>">看生活</a>
-    </div>
-  </article>
+<section class="home-intro">
+  <p class="eyebrow">Lee520150 / Personal Blog</p>
+  <h1>记录工程学习，也记录生活里的具体瞬间。</h1>
+  <p class="intro-text">这里会慢慢放下电子信息工程的笔记、PCB 设计、项目复盘，也会放摄影、模型和日常。页面尽量安静，让文字和作品自己说话。</p>
+  <div class="intro-actions">
+    <a class="button primary" href="<%- url_for('/notes/') %>">进入笔记</a>
+    <a class="button ghost" href="<%- url_for('/life/') %>">生活记录</a>
+  </div>
+</section>
 
-  <a class="bento-card module-large" href="<%- url_for('/pcb/') %>">
-    <span class="card-index">01</span>
-    <strong>PCB 设计</strong>
-    <small>原理图、封装、布局布线、打样、焊接、调试和版本记录。</small>
-  </a>
-
-  <a class="bento-card module-small" href="<%- url_for('/notes/') %>">
-    <span class="card-index">02</span>
+<section class="bento-grid" aria-label="site sections">
+  <a class="bento-card bento-large" href="<%- url_for('/notes/') %>">
+    <span class="card-kicker">Notes</span>
     <strong>学习笔记</strong>
-    <small>电路、信号、通信、嵌入式、GNSS。</small>
+    <small>电路、信号与系统、通信原理、嵌入式、C++、Python、数学建模与 LaTeX。</small>
   </a>
 
-  <a class="bento-card module-small" href="<%- url_for('/projects/') %>">
-    <span class="card-index">03</span>
+  <a class="bento-card" href="<%- url_for('/pcb/') %>">
+    <span class="card-kicker">Board</span>
+    <strong>PCB 设计</strong>
+    <small>原理图、封装、布局布线、打样、焊接和调试。</small>
+  </a>
+
+  <a class="bento-card" href="<%- url_for('/projects/') %>">
+    <span class="card-kicker">Build</span>
     <strong>项目作品</strong>
-    <small>课程设计、硬件作品、完整复盘。</small>
+    <small>课程设计、硬件作品、实验过程和完整复盘。</small>
   </a>
 
-  <a class="bento-card module-wide" href="<%- url_for('/life/') %>">
-    <span class="card-index">04</span>
+  <a class="bento-card bento-tall" href="<%- url_for('/life/') %>">
+    <span class="card-kicker">Life</span>
     <strong>生活与作品</strong>
-    <small>摄影、模型、旅行、随笔，还有那些不必被归进课程表里的东西。</small>
+    <small>摄影、模型、旅行、随笔，以及不必归进课程表里的东西。</small>
   </a>
 </section>
 
-<section class="section-grid">
+<section class="content-grid">
   <div class="section-main">
     <div class="section-heading">
-      <p class="eyebrow">Recent Updates</p>
+      <p class="eyebrow">Writing</p>
       <h2>最近记录</h2>
     </div>
     <div class="post-list">
@@ -51,10 +51,10 @@
     </div>
   </div>
 
-  <aside class="module-rail">
+  <aside class="side-index">
     <div class="section-heading compact">
       <p class="eyebrow">Index</p>
-      <h2>站点索引</h2>
+      <h2>入口</h2>
     </div>
     <a class="rail-link" href="<%- url_for('/about/') %>">关于我和这个站点</a>
     <a class="rail-link" href="<%- url_for('/archives/') %>">按时间查看全部文章</a>
