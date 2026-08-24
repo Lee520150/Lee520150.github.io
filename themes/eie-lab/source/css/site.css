@@ -389,8 +389,10 @@ p {
   max-width: 70ch;
   margin: 0 auto;
   color: var(--text);
-  font-size: 16.5px;
-  line-height: 1.95;
+  font-family: "Noto Serif SC", "Source Han Serif SC", "Songti SC", SimSun, serif;
+  font-size: 17.5px;
+  font-weight: 400;
+  line-height: 2.08;
 }
 
 .article-body h2,
@@ -405,6 +407,15 @@ p {
 .article-body blockquote,
 .article-body pre {
   margin-bottom: 20px;
+}
+
+.article-body p {
+  text-indent: 2em;
+}
+
+.article-body li p,
+.article-body blockquote p {
+  text-indent: 0;
 }
 
 .article-body a {
