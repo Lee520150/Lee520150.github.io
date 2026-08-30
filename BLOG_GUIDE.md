@@ -12,6 +12,16 @@ cd D:\blog
 
 ## 2. 新建一篇文章
 
+最简单的方法：直接双击博客目录里的这个文件：
+
+```text
+D:\blog\new-post.bat
+```
+
+它会让你输入文章标题，然后自动创建文章并打开新文章文件。
+
+也可以手动执行：
+
 ```powershell
 hexo new "文章标题"
 ```
@@ -138,7 +148,7 @@ D:\blog\source\_posts
 
 ```powershell
 cd D:\blog
-hexo new "文章标题"
+双击 new-post.bat
 npm run server
 双击 update-blog.bat
 ```
