@@ -1,0 +1,51 @@
+<article class="pdf-reader-page">
+  <a class="pdf-back-link" href="<%- url_for('/notes/') %>">返回课程笔记</a>
+
+  <header class="pdf-reader-header">
+    <div class="pdf-reader-heading">
+      <p class="eyebrow"><%= page.note.subject %></p>
+      <h1><%= page.note.title %></h1>
+      <p><%= page.note.description %></p>
+    </div>
+
+    <div class="pdf-reader-details" aria-label="Document information">
+      <% if (page.note.pages) { %>
+        <div><span>Pages</span><strong><%= page.note.pages %></strong></div>
+      <% } %>
+      <div><span>Format</span><strong>PDF</strong></div>
+      <div><span>Size</span><strong><%= page.note.size %></strong></div>
+      <% if (page.note.updated) { %>
+        <div><span>Updated</span><strong><%= page.note.updated %></strong></div>
+      <% } %>
+    </div>
+
+    <% if (page.note.tags.length) { %>
+      <div class="pdf-reader-tags">
+        <% page.note.tags.forEach(function(tag) { %><span><%= tag %></span><% }); %>
+      </div>
+    <% } %>
+
+    <div class="pdf-reader-actions">
+      <a class="button primary" href="<%- url_for(page.note.fileUrl) %>" target="_blank" rel="noopener">打开 PDF</a>
+      <a class="button ghost" href="<%- url_for(page.note.fileUrl) %>" download>下载原文件</a>
+    </div>
+  </header>
+
+  <section class="pdf-reader-shell" aria-label="PDF reader">
+    <div class="pdf-reader-bar">
+      <span>Document viewer</span>
+      <span><%= page.note.file %></span>
+    </div>
+    <iframe
+      class="pdf-frame"
+      src="<%- url_for(page.note.fileUrl) %>#page=1&view=FitH&toolbar=1"
+      title="<%= page.note.title %> PDF 阅读器"
+      loading="eager">
+    </iframe>
+    <div class="pdf-mobile-fallback">
+      <strong>在独立窗口中阅读</strong>
+      <p>手机浏览器会使用系统自带的 PDF 阅读器，翻页和缩放更顺手。</p>
+      <a class="button primary" href="<%- url_for(page.note.fileUrl) %>" target="_blank" rel="noopener">打开 PDF</a>
+    </div>
+  </section>
+</article>

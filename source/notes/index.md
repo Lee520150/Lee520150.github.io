@@ -1,20 +1,6 @@
 ---
 title: 笔记
 date: 2026-08-24 00:00:00
-layout: section
+layout: notes
 section_category: Notes
 ---
-
-这里以后可以整理电路、信号与系统、通信原理、单片机、DSP、FPGA、GNSS 等学习笔记。
-
-建议这里专门放“知识整理”和“复习资料”，PCB 设计和项目复盘可以放到对应模块里。
-
-## 可以预留的方向
-
-- 电路与模电数电
-- 信号与系统
-- 通信原理
-- 单片机与嵌入式
-- DSP / FPGA
-- GNSS 与定位
-- C++ / Python / 数学建模

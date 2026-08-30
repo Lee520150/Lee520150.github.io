@@ -1,0 +1,75 @@
+<%
+  const pdfNotes = sitePdfNotes();
+  const writtenPosts = site.posts.sort('date', -1).toArray().filter(function(post) {
+    return post.categories && post.categories.toArray().some(function(category) {
+      return category.name === 'Notes';
+    });
+  });
+%>
+
+<header class="notes-hero">
+  <div>
+    <p class="eyebrow">Notes / Library</p>
+    <h1>课程笔记</h1>
+  </div>
+  <p>保留推导过程、课堂批注和复习时重新理解知识的痕迹。PDF 可直接在线阅读，也可以下载原文件。</p>
+</header>
+
+<section class="notes-library" aria-label="PDF notes">
+  <div class="notes-section-title">
+    <p class="eyebrow">PDF Collection</p>
+    <span><%= pdfNotes.length %> 份资料</span>
+  </div>
+
+  <% if (pdfNotes.length) { %>
+    <div class="pdf-note-grid">
+      <% pdfNotes.forEach(function(note, index) { %>
+        <a class="pdf-note-card" href="<%- url_for(note.pageUrl) %>">
+          <div class="pdf-note-cover" aria-hidden="true">
+            <span class="pdf-cover-index"><%= String(index + 1).padStart(2, '0') %></span>
+            <span class="pdf-cover-label">Engineering / Course / Notes</span>
+            <strong><%= note.title %></strong>
+            <span class="pdf-cover-wave"></span>
+            <small>COLOR LAB · EIE</small>
+          </div>
+          <div class="pdf-note-copy">
+            <div class="pdf-note-meta">
+              <span><%= note.subject %></span>
+              <% if (note.updated) { %><time><%= note.updated %></time><% } %>
+            </div>
+            <h2><%= note.title %></h2>
+            <p><%= note.description %></p>
+            <div class="pdf-note-stats">
+              <% if (note.pages) { %><span><%= note.pages %> 页</span><% } %>
+              <span><%= note.size %></span>
+              <span>PDF</span>
+            </div>
+          </div>
+        </a>
+      <% }); %>
+    </div>
+  <% } else { %>
+    <div class="notes-empty">
+      <strong>还没有 PDF 笔记</strong>
+      <p>把文件放进 source/notes 后，它会自动出现在这里。</p>
+    </div>
+  <% } %>
+</section>
+
+<% if (writtenPosts.length) { %>
+  <section class="notes-writing">
+    <div class="notes-section-title">
+      <p class="eyebrow">Written Notes</p>
+      <span><%= writtenPosts.length %> 篇文章</span>
+    </div>
+    <div class="post-list">
+      <% writtenPosts.forEach(function(post) { %>
+        <article class="post-card">
+          <time datetime="<%= post.date.format('YYYY-MM-DD') %>"><%= post.date.format('YYYY.MM.DD') %></time>
+          <h3><a href="<%- url_for(post.path) %>"><%= post.title %></a></h3>
+          <p><%= strip_html(post.excerpt || post.content).replace(/\s+/g, ' ').substring(0, 118) %></p>
+        </article>
+      <% }); %>
+    </div>
+  </section>
+<% } %>

@@ -1053,6 +1053,366 @@ p {
   line-height: 1.9;
 }
 
+.notes-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 480px);
+  align-items: end;
+  gap: 64px;
+  padding: 72px 0 62px;
+  border-bottom: 1px solid var(--line);
+}
+
+.notes-hero h1 {
+  margin: 8px 0 0;
+  color: var(--ink);
+  font-family: "Noto Serif SC", "Microsoft YaHei", serif;
+  font-size: clamp(48px, 7vw, 82px);
+  line-height: 1;
+}
+
+.notes-hero > p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.notes-library,
+.notes-writing {
+  padding: 42px 0 76px;
+}
+
+.notes-writing {
+  border-top: 1px solid var(--line);
+}
+
+.notes-section-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 22px;
+}
+
+.notes-section-title .eyebrow {
+  margin: 0;
+}
+
+.notes-section-title > span {
+  color: var(--faint);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.pdf-note-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+
+.pdf-note-card {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.76fr) minmax(0, 1.24fr);
+  min-height: 390px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8) inset;
+  transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+}
+
+.pdf-note-card:hover {
+  border-color: var(--line-strong);
+  box-shadow: var(--shadow);
+  transform: translateY(-4px);
+}
+
+.pdf-note-cover {
+  position: relative;
+  display: flex;
+  min-height: 390px;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  padding: 24px;
+  color: #f8f6f1;
+  background: #1b1a18;
+}
+
+.pdf-note-cover::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.3;
+  background:
+    linear-gradient(90deg, transparent 49.5%, rgba(255, 255, 255, 0.12) 50%, transparent 50.5%),
+    repeating-linear-gradient(0deg, transparent 0 29px, rgba(255, 255, 255, 0.08) 29px 30px);
+}
+
+.pdf-note-cover::after {
+  content: "";
+  position: absolute;
+  width: 170px;
+  height: 170px;
+  right: -78px;
+  top: 80px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+}
+
+.pdf-cover-index,
+.pdf-cover-label,
+.pdf-note-cover strong,
+.pdf-note-cover small,
+.pdf-cover-wave {
+  position: relative;
+  z-index: 1;
+}
+
+.pdf-cover-index {
+  align-self: flex-end;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.pdf-cover-label {
+  max-width: 12em;
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.pdf-note-cover strong {
+  max-width: 5em;
+  font-family: "Noto Serif SC", "Microsoft YaHei", serif;
+  font-size: 38px;
+  line-height: 1.18;
+}
+
+.pdf-cover-wave {
+  height: 38px;
+  margin: 2px -24px 0;
+  background:
+    linear-gradient(165deg, transparent 0 34%, rgba(255, 255, 255, 0.74) 34.5% 35%, transparent 35.5% 48%, rgba(255, 255, 255, 0.74) 48.5% 49%, transparent 49.5% 63%, rgba(255, 255, 255, 0.74) 63.5% 64%, transparent 64.5%);
+}
+
+.pdf-note-cover small {
+  color: rgba(255, 255, 255, 0.48);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.pdf-note-copy {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  padding: 28px;
+}
+
+.pdf-note-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.pdf-note-copy h2 {
+  margin: auto 0 14px;
+  color: var(--ink);
+  font-family: "Noto Serif SC", "Microsoft YaHei", serif;
+  font-size: 30px;
+  line-height: 1.25;
+}
+
+.pdf-note-copy p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.85;
+}
+
+.pdf-note-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.pdf-note-stats span,
+.pdf-reader-tags span {
+  padding: 7px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.notes-empty {
+  padding: 46px;
+  border: 1px dashed var(--line-strong);
+  border-radius: 16px;
+  text-align: center;
+}
+
+.notes-empty strong {
+  color: var(--ink);
+}
+
+.notes-empty p {
+  margin: 10px 0 0;
+  color: var(--muted);
+}
+
+.pdf-reader-page {
+  padding: 48px 0 80px;
+}
+
+.pdf-back-link {
+  display: inline-block;
+  margin-bottom: 34px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+  transition: color 160ms ease, transform 160ms ease;
+}
+
+.pdf-back-link::before {
+  content: "←";
+  margin-right: 8px;
+}
+
+.pdf-back-link:hover {
+  color: var(--ink);
+  transform: translateX(-3px);
+}
+
+.pdf-reader-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 0.58fr);
+  column-gap: 64px;
+  align-items: end;
+  padding-bottom: 42px;
+}
+
+.pdf-reader-heading h1 {
+  margin: 10px 0 16px;
+  color: var(--ink);
+  font-family: "Noto Serif SC", "Microsoft YaHei", serif;
+  font-size: clamp(44px, 6vw, 72px);
+  line-height: 1.05;
+}
+
+.pdf-reader-heading > p:last-child {
+  max-width: 640px;
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.9;
+}
+
+.pdf-reader-details {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+.pdf-reader-details div {
+  min-height: 72px;
+  padding: 14px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.pdf-reader-details span,
+.pdf-reader-details strong {
+  display: block;
+}
+
+.pdf-reader-details span {
+  margin-bottom: 8px;
+  color: var(--faint);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.pdf-reader-details strong {
+  color: var(--ink);
+  font-size: 13px;
+}
+
+.pdf-reader-tags,
+.pdf-reader-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  grid-column: 1 / -1;
+}
+
+.pdf-reader-tags {
+  margin-top: 26px;
+}
+
+.pdf-reader-actions {
+  margin-top: 18px;
+}
+
+.pdf-reader-shell {
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+  border-radius: 16px;
+  background: #292825;
+  box-shadow: 0 28px 70px rgba(37, 32, 25, 0.14);
+}
+
+.pdf-reader-bar {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 0 16px;
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.pdf-frame {
+  width: 100%;
+  height: min(82vh, 920px);
+  display: block;
+  border: 0;
+  background: #e9e7e2;
+}
+
+.pdf-mobile-fallback {
+  display: none;
+  padding: 42px 24px;
+  color: var(--paper);
+  text-align: center;
+}
+
+.pdf-mobile-fallback p {
+  max-width: 34em;
+  margin: 10px auto 22px;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -1119,6 +1479,16 @@ p {
 
   .photo-info {
     max-height: 42vh;
+  }
+
+  .notes-hero,
+  .pdf-reader-header {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .pdf-note-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -1213,5 +1583,46 @@ p {
 
   .photo-info {
     padding: 26px 22px;
+  }
+
+  .notes-hero {
+    padding: 48px 0 42px;
+  }
+
+  .notes-hero h1 {
+    font-size: 48px;
+  }
+
+  .pdf-note-card {
+    grid-template-columns: 1fr;
+  }
+
+  .pdf-note-cover {
+    min-height: 330px;
+  }
+
+  .pdf-note-copy {
+    min-height: 260px;
+  }
+
+  .pdf-reader-page {
+    padding-top: 30px;
+  }
+
+  .pdf-reader-heading h1 {
+    font-size: 44px;
+  }
+
+  .pdf-reader-bar {
+    justify-content: center;
+  }
+
+  .pdf-reader-bar span:last-child,
+  .pdf-frame {
+    display: none;
+  }
+
+  .pdf-mobile-fallback {
+    display: block;
   }
 }
