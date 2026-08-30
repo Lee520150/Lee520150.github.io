@@ -77,7 +77,15 @@ Ctrl + C
 
 本地保存 Markdown 文件后，线上网站不会立刻自动更新。
 
-可以直接运行更新脚本：
+最简单的方法：直接双击博客目录里的这个文件：
+
+```text
+D:\blog\update-blog.bat
+```
+
+它会自动构建、提交并推送。结束后窗口会停住，你可以看到是否成功。
+
+也可以在 PowerShell 里运行更新脚本：
 
 ```powershell
 cd D:\blog
@@ -132,7 +140,7 @@ D:\blog\source\_posts
 cd D:\blog
 hexo new "文章标题"
 npm run server
-.\update-blog.ps1 "add new post"
+双击 update-blog.bat
 ```
 
 记住一句话：
