@@ -98,6 +98,16 @@ ignore:
 ## Themes: https://hexo.io/themes/
 theme: eie-lab
 
+# GitHub Discussions comments (Giscus)
+# Enable Discussions and install the Giscus GitHub App before setting enabled to true.
+comments:
+  enabled: false
+  repo: Lee520150/Lee520150.github.io
+  repo_id: MDEwOlJlcG9zaXRvcnkxMzQzOTU3NTkx
+  category: General
+  category_id: ''
+  mapping: pathname
+
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:

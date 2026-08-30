@@ -7,3 +7,12 @@
     <%- page.content %>
   </div>
 </article>
+
+<%
+  const isNotesPost = page.categories && page.categories.toArray().some(function(category) {
+    return category.name === 'Notes';
+  });
+%>
+<% if (isNotesPost && page.comments !== false) { %>
+  <%- partial('_partial/comments') %>
+<% } %>

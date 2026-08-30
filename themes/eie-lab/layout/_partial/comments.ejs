@@ -1,0 +1,34 @@
+<%
+  const comments = config.comments || {};
+  const commentsReady = comments.enabled && comments.repo && comments.repo_id && comments.category && comments.category_id;
+%>
+
+<% if (commentsReady) { %>
+  <section class="discussion-section" aria-labelledby="discussion-title">
+    <header class="discussion-header">
+      <div>
+        <p class="eyebrow">Discussion</p>
+        <h2 id="discussion-title">讨论与交流</h2>
+      </div>
+      <p>关于这份笔记的疑问、补充和不同理解，都可以留在这里。</p>
+    </header>
+
+    <div class="giscus"></div>
+    <script src="https://giscus.app/client.js"
+            data-repo="<%= comments.repo %>"
+            data-repo-id="<%= comments.repo_id %>"
+            data-category="<%= comments.category %>"
+            data-category-id="<%= comments.category_id %>"
+            data-mapping="<%= comments.mapping || 'pathname' %>"
+            data-strict="1"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="top"
+            data-theme="light"
+            data-lang="zh-CN"
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async>
+    </script>
+  </section>
+<% } %>

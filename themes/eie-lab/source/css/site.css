@@ -1413,6 +1413,55 @@ p {
   line-height: 1.8;
 }
 
+.discussion-section {
+  width: min(100%, 930px);
+  margin: 54px auto 0;
+  padding: 34px;
+  border-top: 1px solid var(--line-strong);
+  border-bottom: 1px solid var(--line);
+}
+
+.article + .discussion-section {
+  width: min(100%, 840px);
+  margin-top: -28px;
+  margin-bottom: 72px;
+}
+
+.pdf-reader-shell + .discussion-section {
+  width: 100%;
+}
+
+.discussion-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.8fr);
+  align-items: end;
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+.discussion-header .eyebrow {
+  margin: 0 0 8px;
+}
+
+.discussion-header h2 {
+  margin: 0;
+  color: var(--ink);
+  font-family: "Noto Serif SC", "Microsoft YaHei", serif;
+  font-size: 30px;
+}
+
+.discussion-header > p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.giscus,
+.giscus-frame {
+  width: 100%;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -1489,6 +1538,11 @@ p {
 
   .pdf-note-grid {
     grid-template-columns: 1fr;
+  }
+
+  .discussion-header {
+    grid-template-columns: 1fr;
+    gap: 14px;
   }
 }
 
@@ -1624,5 +1678,9 @@ p {
 
   .pdf-mobile-fallback {
     display: block;
+  }
+
+  .discussion-section {
+    padding: 28px 0;
   }
 }
