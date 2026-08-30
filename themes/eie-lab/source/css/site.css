@@ -1086,25 +1086,7 @@ p {
   }
 
   .author-sidebar {
-    position: static;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    padding: 4px 0 28px;
-  }
-
-  .author-profile {
-    grid-column: span 3;
-    display: grid;
-    grid-template-columns: auto minmax(0, 1fr);
-    align-items: center;
-    column-gap: 16px;
-  }
-
-  .author-avatar {
-    margin-bottom: 0;
-  }
-
-  .author-links {
-    grid-column: 1 / -1;
+    display: none;
   }
 }
 
@@ -1170,13 +1152,6 @@ p {
     padding: 30px;
   }
 
-  .author-sidebar {
-    grid-template-columns: 1fr;
-  }
-
-  .author-profile {
-    grid-column: auto;
-  }
 }
 
 @media (max-width: 580px) {
