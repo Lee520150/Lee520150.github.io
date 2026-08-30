@@ -1,6 +1,8 @@
 ---
 title: PCB 设计
 date: 2026-08-24 00:00:00
+layout: section
+section_category: PCB
 ---
 
 这里以后可以放 PCB 设计相关内容：原理图、封装、布局布线、打样、焊接、调试和版本记录。

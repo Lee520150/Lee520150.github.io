@@ -1,6 +1,8 @@
 ---
 title: 项目
 date: 2026-08-24 00:00:00
+layout: section
+section_category: Projects
 ---
 
 这里以后可以放课程设计、嵌入式项目、通信实验、硬件调试记录和作品展示。

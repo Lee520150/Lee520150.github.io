@@ -2,6 +2,7 @@
 title: 生活
 date: 2026-08-24 00:00:00
 layout: life
+section_category: Life
 ---
 
 这里以后可以放摄影作品、模型记录、旅行、随笔和日常观察。

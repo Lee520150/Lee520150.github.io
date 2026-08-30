@@ -349,6 +349,15 @@ p {
   transform: translateY(-2px);
 }
 
+.section-posts {
+  width: min(100%, 840px);
+  margin: -34px auto 72px;
+}
+
+.empty-card {
+  color: var(--muted);
+}
+
 .rail-link {
   display: block;
   padding: 15px 16px;

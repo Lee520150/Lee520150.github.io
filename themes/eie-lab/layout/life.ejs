@@ -4,6 +4,36 @@
   <p>摄影、模型、随笔和日常观察。这里先做成横向抽拉卡片，之后每张卡都可以换成你的照片、作品图或者专题入口。</p>
 </section>
 
+<section class="section-posts">
+  <div class="section-heading">
+    <p class="eyebrow">Posts</p>
+    <h2>生活文章</h2>
+  </div>
+  <div class="post-list">
+    <%
+      const posts = site.posts.sort('date', -1).toArray().filter(function(post) {
+        return post.categories && post.categories.toArray().some(function(category) {
+          return category.name === 'Life';
+        });
+      });
+    %>
+    <% if (posts.length) { %>
+      <% posts.forEach(function(post) { %>
+        <article class="post-card">
+          <time datetime="<%= post.date.format('YYYY-MM-DD') %>"><%= post.date.format('YYYY.MM.DD') %></time>
+          <h3><a href="<%- url_for(post.path) %>"><%= post.title %></a></h3>
+          <p><%= strip_html(post.excerpt || post.content).replace(/\s+/g, ' ').substring(0, 118) %></p>
+        </article>
+      <% }) %>
+    <% } else { %>
+      <article class="post-card empty-card">
+        <h3>还没有文章</h3>
+        <p>以后选择生活板块创建文章后，会自动显示在这里。</p>
+      </article>
+    <% } %>
+  </div>
+</section>
+
 <section class="life-slider" aria-label="life sections">
   <article class="life-card photo-card">
     <div class="life-art">

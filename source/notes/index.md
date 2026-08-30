@@ -1,6 +1,8 @@
 ---
 title: 笔记
 date: 2026-08-24 00:00:00
+layout: section
+section_category: Notes
 ---
 
 这里以后可以整理电路、信号与系统、通信原理、单片机、DSP、FPGA、GNSS 等学习笔记。
