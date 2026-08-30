@@ -1,0 +1,12 @@
+# 把照片放到 source/images/photos 后，可以在这里给照片补信息。
+# file 必须和照片文件名完全一致。
+#
+# 示例：
+# - file: campus-evening.jpg
+#   title: 傍晚的校园
+#   date: 2026.08
+#   location: 学校
+#   camera: 手机 / 相机型号
+#   story: 这里写这张照片背后的故事。
+
+[]

@@ -1,0 +1,104 @@
+<%
+  const photos = sitePhotos();
+  const photoJson = JSON.stringify(photos).replace(/</g, "\\u003c");
+%>
+
+<section class="photo-hero">
+  <p class="eyebrow">Gallery</p>
+  <h1>摄影</h1>
+  <p>这里放你的摄影作品。照片会从 <code>source/images/photos</code> 自动读取，故事和具体信息可以慢慢补。</p>
+</section>
+
+<% if (photos.length) { %>
+  <section class="photo-gallery" aria-label="Photography works">
+    <% photos.forEach(function(photo) { %>
+      <button class="photo-tile" type="button" data-photo-index="<%= photo.index - 1 %>">
+        <img src="<%- photo.src %>" alt="<%= photo.title %>" loading="lazy">
+        <span class="photo-number"><%= String(photo.index).padStart(2, "0") %></span>
+        <span class="photo-title"><%= photo.title %></span>
+      </button>
+    <% }) %>
+  </section>
+
+  <dialog class="photo-dialog" id="photo-dialog">
+    <button class="photo-close" type="button" aria-label="Close">Close</button>
+    <div class="photo-dialog-grid">
+      <div class="photo-stage">
+        <img id="photo-dialog-image" alt="">
+      </div>
+      <aside class="photo-info">
+        <p class="eyebrow" id="photo-dialog-number"></p>
+        <h2 id="photo-dialog-title"></h2>
+        <dl>
+          <div>
+            <dt>时间</dt>
+            <dd id="photo-dialog-date"></dd>
+          </div>
+          <div>
+            <dt>地点</dt>
+            <dd id="photo-dialog-location"></dd>
+          </div>
+          <div>
+            <dt>器材</dt>
+            <dd id="photo-dialog-camera"></dd>
+          </div>
+        </dl>
+        <p id="photo-dialog-story"></p>
+      </aside>
+    </div>
+  </dialog>
+
+  <script type="application/json" id="photo-data"><%- photoJson %></script>
+  <script>
+    (() => {
+      const dataNode = document.getElementById("photo-data");
+      const dialog = document.getElementById("photo-dialog");
+      if (!dataNode || !dialog) return;
+
+      const photos = JSON.parse(dataNode.textContent);
+      const image = document.getElementById("photo-dialog-image");
+      const number = document.getElementById("photo-dialog-number");
+      const title = document.getElementById("photo-dialog-title");
+      const date = document.getElementById("photo-dialog-date");
+      const location = document.getElementById("photo-dialog-location");
+      const camera = document.getElementById("photo-dialog-camera");
+      const story = document.getElementById("photo-dialog-story");
+      const close = dialog.querySelector(".photo-close");
+
+      const openPhoto = (index) => {
+        const photo = photos[index];
+        if (!photo) return;
+
+        image.src = photo.src;
+        image.alt = photo.title;
+        number.textContent = `Photo ${String(photo.index).padStart(2, "0")}`;
+        title.textContent = photo.title;
+        date.textContent = photo.date || "待补充";
+        location.textContent = photo.location || "待补充";
+        camera.textContent = photo.camera || "待补充";
+        story.textContent = photo.story || "这里以后写这张照片的故事。";
+
+        if (typeof dialog.showModal === "function") {
+          dialog.showModal();
+        } else {
+          dialog.setAttribute("open", "");
+        }
+      };
+
+      document.querySelectorAll(".photo-tile").forEach((tile) => {
+        tile.addEventListener("click", () => openPhoto(Number(tile.dataset.photoIndex)));
+      });
+
+      close.addEventListener("click", () => dialog.close());
+      dialog.addEventListener("click", (event) => {
+        if (event.target === dialog) dialog.close();
+      });
+    })();
+  </script>
+<% } else { %>
+  <section class="photo-empty">
+    <p class="eyebrow">Empty</p>
+    <h2>还没有照片</h2>
+    <p>把照片放进 <code>D:\blog\source\images\photos</code> 后，运行更新脚本，这里就会自动出现作品。</p>
+  </section>
+<% } %>
