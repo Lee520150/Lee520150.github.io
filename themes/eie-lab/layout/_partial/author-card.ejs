@@ -1,0 +1,38 @@
+<aside class="author-sidebar" aria-label="Author profile">
+  <section class="author-panel author-profile">
+    <div class="author-avatar" aria-hidden="true">L</div>
+    <div>
+      <p class="author-kicker">Owner</p>
+      <h2>Lee520150</h2>
+      <p class="author-subtitle">Electronic Information Engineering</p>
+    </div>
+    <div class="author-links" aria-label="Author links">
+      <a href="<%- url_for('/about/') %>" title="About">About</a>
+      <a href="https://github.com/Lee520150" title="GitHub">GitHub</a>
+      <a href="<%- url_for('/archives/') %>" title="Archives">Archive</a>
+      <a href="<%- url_for('/life/') %>" title="Life">Life</a>
+    </div>
+  </section>
+
+  <section class="author-panel">
+    <p class="author-kicker">Notice</p>
+    <h3>这里是什么地方</h3>
+    <p>这里以后放一段很短的自我介绍、站点公告，或者最近正在做的事情。</p>
+  </section>
+
+  <section class="author-panel">
+    <p class="author-kicker">Sections</p>
+    <a class="author-row" href="<%- url_for('/notes/') %>">
+      <span>课程笔记</span>
+      <small>Notes</small>
+    </a>
+    <a class="author-row" href="<%- url_for('/pcb/') %>">
+      <span>PCB 设计</span>
+      <small>Board</small>
+    </a>
+    <a class="author-row" href="<%- url_for('/projects/') %>">
+      <span>项目复盘</span>
+      <small>Build</small>
+    </a>
+  </section>
+</aside>

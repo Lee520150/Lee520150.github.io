@@ -30,17 +30,23 @@
       </nav>
     </header>
 
-    <main class="page-enter">
-      <%- body %>
-    </main>
+    <div class="site-layout">
+      <%- partial('_partial/author-card') %>
 
-    <footer class="site-footer">
-      <div>
-        <strong><%= config.title %></strong>
-        <span>Engineering notes and personal fragments.</span>
+      <div class="content-column">
+        <main class="page-enter">
+          <%- body %>
+        </main>
+
+        <footer class="site-footer">
+          <div>
+            <strong><%= config.title %></strong>
+            <span>Engineering notes and personal fragments.</span>
+          </div>
+          <a href="<%- url_for('/about/') %>">About</a>
+        </footer>
       </div>
-      <a href="<%- url_for('/about/') %>">About</a>
-    </footer>
+    </div>
   </div>
 </body>
 </html>
