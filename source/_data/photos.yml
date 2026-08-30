@@ -9,4 +9,24 @@
 #   camera: 手机 / 相机型号
 #   story: 这里写这张照片背后的故事。
 
-[]
+# - file: 
+#   title: 
+#   date:
+#   location:
+#   camera: Nikon Z50Ⅱ
+#   story:
+
+- file: DSC_1038-已增强-降噪.JPG
+  title: 星空
+  date: 2026.2.13
+  location: 后岭上村
+  camera: Nikon Z50Ⅱ
+  story: 本照片是本人第一次”进行深度思考“的参数调整，故而选取第一张展示（虽然现在依旧经常auto）。左上角的光源污染是来自于家里的灯光
+
+
+- file: DSC_0465-已增强-降噪.JPG
+  title: 不信佛的人叫不上来但是深表尊重的大佛
+  date: 2026.2.7
+  location: 山西大同-云冈石窟
+  camera: Nikon Z50Ⅱ
+  story: 本照片拍摄于大二上结束的寒假，趁着美赛之后春节假期之前紧急和父母去大同旅游所拍，除了有点冷之外都是非常的满意（
