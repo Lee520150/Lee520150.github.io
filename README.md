@@ -1,3 +1,3 @@
-# Lee520150's Blog
+# COLOR's Blog
 
 Personal blog powered by Hexo and GitHub Pages.

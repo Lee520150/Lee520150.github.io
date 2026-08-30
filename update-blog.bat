@@ -1,6 +1,6 @@
 @echo off
 chcp 65001 >nul
-title Update Lee520150 Blog
+title Update COLOR Blog
 
 cd /d "%~dp0"
 
