@@ -667,9 +667,9 @@ p {
   display: inline-flex;
   align-items: center;
   overflow: hidden;
-  min-height: 25px;
+  min-height: 23px;
   border: 1px solid rgba(24, 23, 22, 0.16);
-  border-radius: 4px;
+  border-radius: 3px;
   color: var(--badge-ink);
   font-size: 10px;
   font-weight: 800;
@@ -689,8 +689,8 @@ p {
 .site-badge em {
   display: inline-flex;
   align-items: center;
-  min-height: 25px;
-  padding: 0 8px;
+  min-height: 23px;
+  padding: 0 7px;
   font-style: normal;
 }
 
@@ -706,15 +706,27 @@ p {
 }
 
 .badge-icon {
-  display: inline-grid;
-  place-items: center;
-  min-width: 15px;
-  height: 15px;
-  border-radius: 3px;
-  background: rgba(255, 255, 255, 0.18);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
   color: inherit;
-  font-size: 8px;
-  font-weight: 900;
+}
+
+.badge-icon svg {
+  width: 14px;
+  height: 14px;
+  display: block;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.badge-icon svg circle {
+  fill: none;
 }
 
 .site-badge.is-hexo {
