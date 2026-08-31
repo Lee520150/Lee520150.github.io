@@ -148,6 +148,7 @@ a {
   display: grid;
   gap: 14px;
   padding: 18px 0 42px;
+  transform: translateX(-26px);
 }
 
 .author-panel {
@@ -1521,6 +1522,10 @@ p {
     gap: 24px;
   }
 
+  .author-sidebar {
+    transform: translateX(-14px);
+  }
+
   .author-profile {
     padding: 18px;
   }
@@ -1540,6 +1545,7 @@ p {
 
   .author-sidebar {
     display: none;
+    transform: none;
   }
 }
 
