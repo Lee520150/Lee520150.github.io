@@ -656,38 +656,90 @@ p {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 6px;
-  max-width: 520px;
+  gap: 7px;
+  max-width: 680px;
 }
 
 .site-badge {
+  --badge-left: #2f2d29;
+  --badge-right: #f7f4ec;
+  --badge-ink: #181716;
   display: inline-flex;
   align-items: center;
   overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: 7px;
-  background: rgba(255, 255, 255, 0.72);
-  color: var(--text);
-  font-size: 11px;
+  min-height: 25px;
+  border: 1px solid rgba(24, 23, 22, 0.16);
+  border-radius: 4px;
+  color: var(--badge-ink);
+  font-size: 10px;
   font-weight: 800;
   line-height: 1;
-  box-shadow: 0 8px 24px rgba(52, 45, 35, 0.045);
+  text-transform: uppercase;
+  box-shadow: 0 8px 22px rgba(52, 45, 35, 0.045);
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+}
+
+.site-badge:hover {
+  border-color: rgba(24, 23, 22, 0.28);
+  box-shadow: 0 12px 28px rgba(52, 45, 35, 0.08);
+  transform: translateY(-1px);
 }
 
 .site-badge b,
 .site-badge em {
-  padding: 7px 8px;
+  display: inline-flex;
+  align-items: center;
+  min-height: 25px;
+  padding: 0 8px;
   font-style: normal;
 }
 
 .site-badge b {
-  border-right: 1px solid var(--line);
-  color: var(--muted);
-  background: var(--paper-soft);
+  gap: 5px;
+  color: #fff;
+  background: var(--badge-left);
 }
 
 .site-badge em {
-  color: var(--ink);
+  color: var(--badge-ink);
+  background: var(--badge-right);
+}
+
+.badge-icon {
+  display: inline-grid;
+  place-items: center;
+  min-width: 15px;
+  height: 15px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.18);
+  color: inherit;
+  font-size: 8px;
+  font-weight: 900;
+}
+
+.site-badge.is-hexo {
+  --badge-left: #0e2338;
+  --badge-right: #dbeafe;
+}
+
+.site-badge.is-pages {
+  --badge-left: #14351f;
+  --badge-right: #dcfce7;
+}
+
+.site-badge.is-repo {
+  --badge-left: #24292f;
+  --badge-right: #f1f5f9;
+}
+
+.site-badge.is-field {
+  --badge-left: #513b16;
+  --badge-right: #f8e7b8;
+}
+
+.site-badge.is-license {
+  --badge-left: #36322b;
+  --badge-right: #f4f1eb;
 }
 
 .life-hero {
