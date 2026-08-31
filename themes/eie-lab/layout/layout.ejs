@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="<%- url_for('/css/site.css') %>?v=20260831-sidebar-space-1">
+  <link rel="stylesheet" href="<%- url_for('/css/site.css') %>?v=20260831-footer-badges-1">
   <% if (page.math) { %>
     <script>
       window.MathJax = {
@@ -53,6 +53,12 @@
           <div>
             <strong><%= config.title %></strong>
             <span>Engineering notes and personal fragments.</span>
+          </div>
+          <div class="site-badges" aria-label="Site badges">
+            <span class="site-badge"><b>Engine</b><em>Hexo</em></span>
+            <span class="site-badge"><b>Host</b><em>GitHub Pages</em></span>
+            <span class="site-badge"><b>Field</b><em>EIE</em></span>
+            <span class="site-badge"><b>License</b><em>BY-NC-SA</em></span>
           </div>
           <a href="<%- url_for('/about/') %>">About</a>
         </footer>

@@ -652,6 +652,44 @@ p {
   color: var(--ink);
 }
 
+.site-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  max-width: 520px;
+}
+
+.site-badge {
+  display: inline-flex;
+  align-items: center;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--text);
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1;
+  box-shadow: 0 8px 24px rgba(52, 45, 35, 0.045);
+}
+
+.site-badge b,
+.site-badge em {
+  padding: 7px 8px;
+  font-style: normal;
+}
+
+.site-badge b {
+  border-right: 1px solid var(--line);
+  color: var(--muted);
+  background: var(--paper-soft);
+}
+
+.site-badge em {
+  color: var(--ink);
+}
+
 .life-hero {
   max-width: 760px;
   padding: 68px 0 28px;
@@ -1612,6 +1650,16 @@ p {
   .nav {
     width: 100%;
     overflow-x: auto;
+    justify-content: flex-start;
+  }
+
+  .site-footer {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 24px 0;
+  }
+
+  .site-badges {
     justify-content: flex-start;
   }
 
