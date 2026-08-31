@@ -1,0 +1,31 @@
+<%
+  const chapters = [
+    ['01', '底层驱动', 'foundation'],
+    ['02', 'DSP', 'dsp'],
+    ['03', '测量', 'measurement'],
+    ['04', '器件通信', 'devices'],
+    ['05', '工程索引', 'projects']
+  ];
+%>
+<article class="stm32-note">
+  <header class="stm32-note-header">
+    <a class="stm32-back" href="<%- url_for('/notes/stm32g474/') %>">STM32G474 专题</a>
+    <p class="eyebrow"><%= page.chapter_label %></p>
+    <h1><%= page.title %></h1>
+    <p><%= page.description %></p>
+  </header>
+
+  <div class="stm32-note-layout">
+    <aside class="stm32-note-nav" aria-label="专题章节">
+      <span>专题目录</span>
+      <% chapters.forEach(function(item) { %>
+        <a class="<%= page.chapter === item[2] ? 'active' : '' %>" href="<%- url_for('/notes/stm32g474/' + item[2] + '/') %>">
+          <small><%= item[0] %></small><%= item[1] %>
+        </a>
+      <% }); %>
+    </aside>
+    <div class="stm32-note-body article-body">
+      <%- page.content %>
+    </div>
+  </div>
+</article>

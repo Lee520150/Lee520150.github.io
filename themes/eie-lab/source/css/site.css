@@ -1082,6 +1082,39 @@ p {
   padding: 42px 0 76px;
 }
 
+.topic-notes { padding: 42px 0 0; }
+.topic-note-feature {
+  position: relative; display: grid;
+  grid-template-columns: 190px minmax(0, 1fr) 32px;
+  align-items: stretch; min-height: 300px; overflow: hidden;
+  border: 1px solid var(--line); border-radius: 16px;
+  background: rgba(255, 255, 255, 0.82);
+  transition: border-color 200ms ease, box-shadow 200ms ease, transform 200ms ease;
+}
+.topic-note-feature:hover { border-color: var(--line-strong); box-shadow: var(--shadow); transform: translateY(-4px); }
+.topic-note-index {
+  position: relative; display: flex; flex-direction: column; justify-content: space-between;
+  overflow: hidden; padding: 24px; color: var(--paper); background: var(--ink);
+}
+.topic-note-index::after {
+  content: ""; position: absolute; width: 160px; height: 160px;
+  right: -82px; bottom: 28px; border: 1px solid rgba(255,255,255,.24); border-radius: 50%;
+}
+.topic-note-index span, .topic-note-index small {
+  position: relative; z-index: 1; color: rgba(255,255,255,.48); font-size: 10px; font-weight: 700;
+}
+.topic-note-index strong { position: relative; z-index: 1; font-size: 64px; letter-spacing: 0; }
+.topic-note-copy { display: flex; flex-direction: column; justify-content: center; padding: 36px 42px; }
+.topic-note-copy > p { margin: 0 0 14px; color: var(--accent); font-size: 11px; font-weight: 800; }
+.topic-note-copy h2 {
+  margin: 0 0 18px; color: var(--ink); font-family: "Noto Serif SC", "Microsoft YaHei", serif;
+  font-size: clamp(28px, 4vw, 42px); line-height: 1.2;
+}
+.topic-note-copy > span { max-width: 48em; color: var(--muted); font-size: 13px; line-height: 1.9; }
+.topic-note-tags { display: flex; flex-wrap: wrap; gap: 8px 16px; margin-top: 24px; }
+.topic-note-tags i { color: var(--faint); font-size: 10px; font-style: normal; font-weight: 700; }
+.topic-note-arrow { align-self: start; margin-top: 26px; color: var(--faint); font-size: 20px; }
+
 .notes-writing {
   border-top: 1px solid var(--line);
 }
@@ -1272,6 +1305,66 @@ p {
   margin: 10px 0 0;
   color: var(--muted);
 }
+
+.stm32-hub, .stm32-note { padding: 48px 0 90px; }
+.stm32-back { display: inline-block; margin-bottom: 38px; color: var(--muted); font-size: 12px; font-weight: 700; }
+.stm32-back::before { content: "←"; margin-right: 8px; }
+.stm32-back:hover { color: var(--ink); }
+.stm32-hub-hero { position: relative; padding: 24px 0 72px; border-bottom: 1px solid var(--line); }
+.stm32-hub-hero::after {
+  content: "G474"; position: absolute; right: 0; top: 12px; color: rgba(24,23,22,.045);
+  font-size: clamp(84px, 14vw, 170px); font-weight: 800; line-height: 1; pointer-events: none;
+}
+.stm32-hub-hero h1 {
+  position: relative; z-index: 1; max-width: 780px; margin: 14px 0 26px; color: var(--ink);
+  font-family: "Noto Serif SC", "Microsoft YaHei", serif; font-size: clamp(50px, 7vw, 84px); line-height: 1.12;
+}
+.stm32-hub-hero > p:not(.eyebrow) { max-width: 680px; margin: 0; color: var(--muted); font-size: 15px; line-height: 1.95; }
+.stm32-hub-facts { display: flex; flex-wrap: wrap; gap: 12px 28px; margin-top: 42px; color: var(--faint); font-size: 11px; }
+.stm32-hub-facts strong { margin-right: 5px; color: var(--ink); font-size: 18px; }
+.stm32-roadmap { padding: 54px 0 76px; }
+.stm32-roadmap-head { display: flex; justify-content: space-between; gap: 30px; margin-bottom: 22px; }
+.stm32-roadmap-head > span { max-width: 38em; color: var(--faint); font-size: 11px; line-height: 1.7; }
+.stm32-chapters { border-top: 1px solid var(--line); }
+.stm32-chapter {
+  display: grid; grid-template-columns: 54px minmax(0, 1fr) 24px; align-items: center; gap: 22px;
+  min-height: 148px; padding: 24px 10px; border-bottom: 1px solid var(--line);
+  transition: padding 180ms ease, background 180ms ease;
+}
+.stm32-chapter:hover { padding-inline: 20px; background: rgba(255,255,255,.64); }
+.stm32-chapter-number { color: var(--faint); font-size: 12px; font-weight: 800; }
+.stm32-chapter small { color: var(--accent); font-size: 9px; font-weight: 800; }
+.stm32-chapter h2 { margin: 7px 0 8px; color: var(--ink); font-family: "Noto Serif SC", "Microsoft YaHei", serif; font-size: 28px; }
+.stm32-chapter p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.7; }
+.stm32-scope { display: grid; grid-template-columns: 140px minmax(180px,.55fr) minmax(0,1fr); gap: 30px; padding-top: 44px; border-top: 1px solid var(--line); }
+.stm32-scope h2 { margin: 0; color: var(--ink); font-family: "Noto Serif SC", "Microsoft YaHei", serif; font-size: 30px; }
+.stm32-scope p { margin: 0 0 12px; color: var(--muted); font-size: 12px; line-height: 1.85; }
+.stm32-note-header { max-width: 800px; padding: 16px 0 58px; }
+.stm32-note-header .stm32-back { margin-bottom: 46px; }
+.stm32-note-header h1 {
+  margin: 12px 0 20px; color: var(--ink); font-family: "Noto Serif SC", "Microsoft YaHei", serif;
+  font-size: clamp(46px, 7vw, 74px); line-height: 1.08;
+}
+.stm32-note-header > p:last-child { max-width: 660px; margin: 0; color: var(--muted); font-size: 14px; line-height: 1.9; }
+.stm32-note-layout { display: grid; grid-template-columns: 152px minmax(0,1fr); align-items: start; gap: 54px; padding-top: 42px; border-top: 1px solid var(--line); }
+.stm32-note-nav { position: sticky; top: 28px; display: grid; gap: 2px; }
+.stm32-note-nav > span { margin-bottom: 12px; color: var(--faint); font-size: 10px; font-weight: 800; }
+.stm32-note-nav a {
+  display: flex; align-items: center; gap: 10px; padding: 9px 8px; border-left: 1px solid var(--line);
+  color: var(--muted); font-size: 11px; font-weight: 700;
+}
+.stm32-note-nav a.active { border-left-color: var(--ink); color: var(--ink); }
+.stm32-note-nav small { color: var(--faint); font-size: 9px; }
+.stm32-note-body.article-body { max-width: 74ch; margin: 0; }
+.stm32-note-body.article-body > h2:first-child { margin-top: 0; }
+.stm32-note-body.article-body p { text-indent: 0; }
+.stm32-note-body table {
+  width: 100%; margin: 24px 0 30px; border-collapse: collapse;
+  font-family: Inter, "Microsoft YaHei", sans-serif; font-size: 12px; line-height: 1.65;
+}
+.stm32-note-body th, .stm32-note-body td { padding: 12px 10px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+.stm32-note-body th { color: var(--ink); font-weight: 800; }
+.stm32-note-body mjx-container[display="true"] { overflow-x: auto; overflow-y: hidden; padding: 8px 0; }
 
 .pdf-reader-page {
   padding: 48px 0 80px;
@@ -1490,6 +1583,13 @@ p {
   .pdf-note-grid {
     grid-template-columns: 1fr;
   }
+
+  .stm32-note-layout { grid-template-columns: 1fr; gap: 28px; }
+  .stm32-note-nav { position: static; grid-template-columns: repeat(5, minmax(110px, 1fr)); overflow-x: auto; }
+  .stm32-note-nav > span { display: none; }
+  .stm32-note-nav a { border-left: 0; border-bottom: 1px solid var(--line); white-space: nowrap; }
+  .stm32-note-nav a.active { border-bottom-color: var(--ink); }
+  .stm32-scope { grid-template-columns: 1fr; gap: 16px; }
 }
 
 @media (max-width: 820px) {
@@ -1604,6 +1704,25 @@ p {
   .pdf-note-copy {
     min-height: 260px;
   }
+
+  .topic-note-feature { grid-template-columns: 1fr; }
+  .topic-note-index { min-height: 180px; }
+  .topic-note-index strong { font-size: 52px; }
+  .topic-note-copy { padding: 28px 24px 34px; }
+  .topic-note-arrow { display: none; }
+  .stm32-hub, .stm32-note { padding-top: 30px; }
+  .stm32-hub-hero { padding-bottom: 50px; }
+  .stm32-hub-hero h1 { font-size: 48px; }
+  .stm32-hub-hero::after { display: none; }
+  .stm32-roadmap-head { display: block; }
+  .stm32-roadmap-head > span { display: block; margin-top: 10px; }
+  .stm32-chapter { grid-template-columns: 34px minmax(0, 1fr); gap: 12px; }
+  .stm32-chapter > span:last-child { display: none; }
+  .stm32-chapter h2 { font-size: 24px; }
+  .stm32-note-header h1 { font-size: 44px; }
+  .stm32-note-body.article-body { font-size: 16px; }
+  .stm32-note-body { overflow-x: hidden; }
+  .stm32-note-body table { display: block; overflow-x: auto; white-space: nowrap; }
 
   .pdf-reader-page {
     padding-top: 30px;

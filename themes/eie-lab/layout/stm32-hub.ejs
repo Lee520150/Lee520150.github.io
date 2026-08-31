@@ -1,0 +1,51 @@
+<article class="stm32-hub">
+  <a class="stm32-back" href="<%- url_for('/notes/') %>">返回课程笔记</a>
+
+  <header class="stm32-hub-hero">
+    <p class="eyebrow">NUEDC / STM32G474 / Field Notes</p>
+    <h1>把驱动变成<br>可以复用的知识。</h1>
+    <p>这不是 HAL 函数目录，而是一套从外设时序、实时数据流到信号处理和测量系统的电赛笔记。内容从本机 G474 工程中归纳，公式与实现彼此对应。</p>
+    <div class="stm32-hub-facts">
+      <span><strong>21</strong> 个 G474 工程</span>
+      <span><strong>5</strong> 个学习章节</span>
+      <span><strong>170 MHz</strong> Cortex-M4F</span>
+    </div>
+  </header>
+
+  <section class="stm32-roadmap" aria-label="学习路线">
+    <div class="stm32-roadmap-head">
+      <p class="eyebrow">Learning Route</p>
+      <span>建议按 01 → 05 阅读，也可以按比赛任务直接进入对应章节。</span>
+    </div>
+    <div class="stm32-chapters">
+      <% const chapters = [
+        ['01', '底层与实时数据流', 'foundation', '定时器触发、ADC / DAC、DMA 双缓冲与中断边界', 'TIM · ADC · DAC · DMA'],
+        ['02', 'DSP 与波形系统', 'dsp', '采样、DDS、FFT、窗函数、THD、Hilbert 移相与 FIR', 'DDS · FFT · FIR'],
+        ['03', '测量与校准', 'measurement', '相关检测、复阻抗、LCR 自动量程、Bode 与 TDC', 'LCR · BODE · TDC'],
+        ['04', '通信与器件驱动', 'devices', 'SPI / I2C / UART 驱动骨架与外部器件接入', 'AD9959 · GP22 · DGUS'],
+        ['05', '工程索引', 'projects', '把分散工程映射到知识模块，识别可复用代码', '21 PROJECTS']
+      ]; %>
+      <% chapters.forEach(function(item) { %>
+        <a class="stm32-chapter" href="<%- url_for('/notes/stm32g474/' + item[2] + '/') %>">
+          <span class="stm32-chapter-number"><%= item[0] %></span>
+          <div>
+            <small><%= item[4] %></small>
+            <h2><%= item[1] %></h2>
+            <p><%= item[3] %></p>
+          </div>
+          <span aria-hidden="true">→</span>
+        </a>
+      <% }); %>
+    </div>
+  </section>
+
+  <section class="stm32-scope">
+    <p class="eyebrow">Editorial Scope</p>
+    <h2>整理边界</h2>
+    <div>
+      <p><strong>保留：</strong>自己编写的驱动、算法、参数选择、回调组织和工程验证经验。</p>
+      <p><strong>省略：</strong>CubeMX 自动生成代码、HAL/CMSIS 源码、构建产物和重复备份。</p>
+      <p><strong>代码状态：</strong>正文只展示关键片段。完整工程下载暂不开放，后续可统一接入 GitHub。</p>
+    </div>
+  </section>
+</article>
