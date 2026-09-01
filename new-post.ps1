@@ -57,7 +57,7 @@ if (-not $created) {
 }
 
 $moreMarker = [string][char]60 + "!-- more --" + [string][char]62
-$date = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+$date = (Get-Date).ToString("yyyy-MM-dd") + "T12:00:00+08:00"
 $lines = New-Object System.Collections.Generic.List[string]
 $lines.Add("---")
 $lines.Add("title: " + $Title)
