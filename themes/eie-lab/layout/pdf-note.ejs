@@ -31,6 +31,15 @@
     </div>
   </header>
 
+  <% if (page.note.quote) { %>
+    <section class="pdf-reader-quote" aria-label="Note preface">
+      <p>“<%= page.note.quote %>”</p>
+      <% if (page.note.quote_from) { %>
+        <cite><%= page.note.quote_from %></cite>
+      <% } %>
+    </section>
+  <% } %>
+
   <section class="pdf-reader-shell" aria-label="PDF reader">
     <div class="pdf-reader-bar">
       <span>Document viewer</span>

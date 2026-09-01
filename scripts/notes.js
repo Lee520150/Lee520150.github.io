@@ -61,6 +61,8 @@ function getNotes() {
         title: entry.title || fallbackTitle,
         subject: entry.subject || "课程手写笔记",
         description: entry.description || "完整 PDF 课堂笔记，保留原始公式、图示与批注。",
+        quote: entry.quote || "",
+        quote_from: entry.quote_from || "",
         updated: entry.updated || "",
         tags: Array.isArray(entry.tags) ? entry.tags : [],
         pages: readPageCount(filePath),
