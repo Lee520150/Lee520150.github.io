@@ -1473,6 +1473,12 @@ p {
   font-weight: 700;
 }
 
+.pdf-reader-tags span {
+  padding: 9px 14px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
 .notes-empty {
   padding: 46px;
   border: 1px dashed var(--line-strong);
