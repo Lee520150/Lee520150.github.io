@@ -587,13 +587,93 @@ p {
   color: var(--muted);
 }
 
+.article-body figure.highlight {
+  position: relative;
+  overflow: hidden;
+  margin: 28px 0;
+  border: 1px solid rgba(24, 23, 22, 0.12);
+  border-radius: 8px;
+  background: #171715;
+  box-shadow: 0 18px 45px rgba(52, 45, 35, 0.09);
+}
+
+.article-body figure.highlight::before {
+  content: "";
+  display: block;
+  height: 28px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background:
+    radial-gradient(circle at 16px 50%, #f06a5f 0 4px, transparent 4.5px),
+    radial-gradient(circle at 32px 50%, #e2b856 0 4px, transparent 4.5px),
+    radial-gradient(circle at 48px 50%, #65c46f 0 4px, transparent 4.5px),
+    linear-gradient(180deg, #20201d, #181815);
+}
+
+.article-body figure.highlight table,
+.article-body figure.highlight tbody,
+.article-body figure.highlight tr,
+.article-body figure.highlight td {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.article-body figure.highlight .gutter {
+  display: none;
+}
+
+.article-body figure.highlight .code {
+  overflow-x: auto;
+}
+
 .article-body pre {
   overflow-x: auto;
-  padding: 18px;
+  margin: 0;
+  padding: 20px 24px 22px;
   border: 1px solid rgba(24, 23, 22, 0.14);
-  border-radius: 12px;
-  color: #f5efe3;
-  background: #1b1a18;
+  border-radius: 8px;
+  color: #ede9df;
+  background: #171715;
+}
+
+.article-body figure.highlight pre {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.article-body figure.highlight .line {
+  min-height: 1.72em;
+}
+
+.article-body figure.highlight .comment {
+  color: #8f887d;
+}
+
+.article-body figure.highlight .keyword,
+.article-body figure.highlight .type,
+.article-body figure.highlight .built_in {
+  color: #d9b56f;
+}
+
+.article-body figure.highlight .number,
+.article-body figure.highlight .literal {
+  color: #8fc7a4;
+}
+
+.article-body figure.highlight .string {
+  color: #c7d08b;
+}
+
+.article-body figure.highlight .function,
+.article-body figure.highlight .title {
+  color: #d8d4c9;
+}
+
+.article-body figure.highlight .meta {
+  color: #b8a27a;
 }
 
 .article-body code {
