@@ -231,6 +231,50 @@ a {
   padding-top: 20px;
 }
 
+.daily-quote {
+  padding: 20px;
+}
+
+.daily-quote .author-kicker {
+  padding: 0;
+}
+
+.daily-quote blockquote {
+  position: relative;
+  margin: 10px 0 0;
+  padding: 0 0 0 16px;
+  border-left: 2px solid var(--accent);
+}
+
+.daily-quote blockquote::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: 4px;
+  width: 1px;
+  background: rgba(111, 90, 54, 0.18);
+}
+
+.daily-quote p {
+  margin: 0;
+  padding: 0;
+  color: var(--text);
+  font-family: "Noto Serif SC", "Source Han Serif SC", "Songti SC", SimSun, serif;
+  font-size: 14px;
+  line-height: 1.9;
+  text-indent: 0;
+}
+
+.daily-quote footer {
+  margin-top: 10px;
+  color: var(--faint);
+  font-size: 11px;
+  font-weight: 750;
+  line-height: 1.5;
+  text-align: right;
+}
+
 .author-links {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
