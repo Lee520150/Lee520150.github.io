@@ -179,3 +179,87 @@ npm run server
 ```text
 保存 Markdown 只影响本地；git push 后线上才会更新。
 ```
+
+## 8. 美化标签
+
+博客里已经加了一组类似 Stellar 的写作标签，可以直接写在 `.md` 文章里。
+
+### 引言
+
+适合放在文章开头，作为醒目的题记：
+
+```markdown
+{% quot 创作是并没有什么秘诀，能够交头接耳，一句话就传授给另一个的。 from:鲁迅 %}
+```
+
+也可以指定成标题大小：
+
+```markdown
+{% quot Chapter 1 · 选题 el:h3 %}
+```
+
+### 引用块
+
+适合放原文和解释：
+
+```markdown
+{% blockquote from:鲁迅 %}
+{创作是并没有什么秘诀。|这句话可以作为文章题记或旁注。}
+{% endblockquote %}
+```
+
+普通 Markdown 引用也会自动变漂亮：
+
+```markdown
+> 这里是一段普通引用。
+```
+
+### 提示块
+
+适合写温馨提示、低级错误、注意事项：
+
+```markdown
+{% note 温馨提示 color:warning %}
+本篇不是严格教程，只是一次过程记录。
+{% endnote %}
+```
+
+常用颜色：`warning`、`red`、`green`、`blue`、`purple`。
+
+### 纸张块
+
+适合放一段更正式、有首行缩进的文字：
+
+```markdown
+{% paper title:赛后记录 author:COLOR footer:节选 %}
+<!-- paragraph -->
+这里是一段正文，会自动首行缩进两个字符。
+
+<!-- line right -->
+写于某个晚上
+{% endpaper %}
+```
+
+### 行内修饰
+
+```markdown
+{% mark 重点内容 color:warning %}
+{% blur 鼠标放上来才显示 %}
+{% psw 更像密码遮罩的隐藏文字 %}
+{% del 被划掉的内容 %}
+{% u 下划线 %}
+{% wavy 波浪线 %}
+{% emp 着重号 %}
+```
+
+### 大段隐藏
+
+适合放需要鼠标悬停才显示的整段内容：
+
+```markdown
+{% spoiler Sensitive %}
+这里写一整段内容。
+
+可以有多个段落。
+{% endspoiler %}
+```
