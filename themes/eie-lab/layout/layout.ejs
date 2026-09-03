@@ -53,6 +53,19 @@
           <div>
             <strong><%= config.title %></strong>
             <span>Engineering notes and personal fragments.</span>
+            <div class="site-liveness" aria-label="Site liveness">
+              <p>
+                总访问量
+                <strong id="busuanzi_container_site_pv" class="site-count">
+                  <span id="busuanzi_value_site_pv">--</span>
+                </strong>
+                次。
+              </p>
+              <p>
+                在世界边缘存活了
+                <strong data-site-uptime>-- 天 -- 小时 -- 分 -- 秒</strong>。
+              </p>
+            </div>
           </div>
           <div class="site-badges" aria-label="Site status badges">
             <a class="site-badge is-hexo" href="https://hexo.io/" target="_blank" rel="noopener" title="Built with Hexo">
@@ -77,5 +90,7 @@
     </div>
   </div>
   <script defer src="<%- url_for('/js/daily-hitokoto.js') %>?v=20260904-hitokoto-1"></script>
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script defer src="<%- url_for('/js/site-stats.js') %>?v=20260904-site-stats-1"></script>
 </body>
 </html>

@@ -1025,6 +1025,30 @@ p {
   color: var(--ink);
 }
 
+.site-liveness {
+  margin-top: 12px;
+  color: var(--muted);
+  font-family: "Noto Serif SC", "Microsoft YaHei", serif;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.site-liveness p {
+  margin: 0;
+}
+
+.site-liveness strong {
+  display: inline;
+  color: var(--text);
+  font-family: Inter, "Microsoft YaHei", sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.site-liveness .site-count {
+  min-width: 3.2em;
+}
+
 .site-badges {
   display: flex;
   flex-wrap: wrap;
