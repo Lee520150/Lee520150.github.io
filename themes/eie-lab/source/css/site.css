@@ -326,16 +326,16 @@ p {
 }
 
 .home-wordmark {
-  width: min(920px, 100%);
+  width: min(820px, 100%);
   display: inline-flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: flex-end;
-  gap: 0 0.08em;
-  padding: 6px 0 18px;
+  gap: 0;
+  padding: 6px 0 16px;
   font-family: Inter, "Microsoft YaHei", "PingFang SC", sans-serif !important;
-  font-size: clamp(58px, 11vw, 132px) !important;
+  font-size: clamp(44px, 7.4vw, 92px) !important;
   font-weight: 850 !important;
-  line-height: 0.82 !important;
+  line-height: 0.9 !important;
   letter-spacing: 0;
   text-transform: uppercase;
   isolation: isolate;
@@ -364,6 +364,15 @@ p {
   color: transparent;
   -webkit-text-stroke: 1.4px var(--ink);
   text-stroke: 1.4px var(--ink);
+}
+
+.wordmark-white {
+  color: var(--paper);
+  text-shadow:
+    0 0 0 var(--ink),
+    0 18px 34px rgba(24, 23, 22, 0.08);
+  -webkit-text-stroke: 1.2px rgba(24, 23, 22, 0.48);
+  text-stroke: 1.2px rgba(24, 23, 22, 0.48);
 }
 
 .wordmark-life::after {
@@ -2080,9 +2089,9 @@ p {
   }
 
   .home-wordmark {
-    font-size: 48px !important;
-    line-height: 0.9 !important;
-    padding-bottom: 14px;
+    font-size: clamp(34px, 10.6vw, 48px) !important;
+    line-height: 0.96 !important;
+    padding-bottom: 12px;
   }
 
   .life-slider {
