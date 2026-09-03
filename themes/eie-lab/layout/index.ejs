@@ -1,7 +1,11 @@
 <section class="home-intro">
   <p class="eyebrow">COLOR / Personal Blog</p>
-  <h1>记录工程学习，也记录生活里的具体瞬间。</h1>
-  <p class="intro-text">这里会慢慢放下电子信息工程的笔记、PCB 设计、项目复盘，也会放摄影、模型和日常。页面尽量安静，让文字和作品自己说话。</p>
+  <h1 class="home-wordmark" aria-label="COLORFULIFE">
+    <span class="wordmark-fill">COLOR</span>
+    <span class="wordmark-outline">FUL</span>
+    <span class="wordmark-fill wordmark-life">IFE</span>
+  </h1>
+  <p class="intro-text">这里会慢慢放下电子信息工程的笔记、PCB 设计、课程复盘，也会放摄影、模型和日常。页面尽量安静，让文字和作品自己说话。</p>
   <div class="intro-actions">
     <a class="button primary" href="<%- url_for('/notes/') %>">进入笔记</a>
     <a class="button ghost" href="<%- url_for('/life/') %>">生活记录</a>
@@ -21,10 +25,10 @@
     <small>原理图、封装、布局布线、打样、焊接和调试。</small>
   </a>
 
-  <a class="bento-card" href="<%- url_for('/projects/') %>">
-    <span class="card-kicker">Build</span>
-    <strong>项目作品</strong>
-    <small>课程设计、硬件作品、实验过程和完整复盘。</small>
+  <a class="bento-card" href="<%- url_for('/links/') %>">
+    <span class="card-kicker">Links</span>
+    <strong>常用入口</strong>
+    <small>开发工具、芯片资料、硬件参考和后续会反复用到的网站。</small>
   </a>
 
   <a class="bento-card bento-tall" href="<%- url_for('/life/') %>">
