@@ -17,6 +17,10 @@
   box-sizing: border-box;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 html {
   min-height: 100%;
   color: var(--ink);
@@ -585,6 +589,7 @@ p {
 }
 
 .post-card {
+  display: block;
   padding: 20px;
   transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
 }
@@ -612,6 +617,11 @@ p {
   border-color: var(--line-strong);
   box-shadow: var(--shadow);
   transform: translateY(-2px);
+}
+
+.post-card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
 }
 
 .section-posts {
@@ -1328,6 +1338,70 @@ p {
   border-radius: 5px;
   color: var(--ink);
   background: var(--accent-soft);
+}
+
+.photo-gate {
+  width: min(100%, 560px);
+  margin: 20px 0 78px;
+  padding: 30px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: var(--shadow);
+}
+
+.photo-gate h2 {
+  margin: 0 0 22px;
+  color: var(--ink);
+  font-size: 24px;
+}
+
+.photo-gate label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.photo-gate-row {
+  display: flex;
+  gap: 10px;
+}
+
+.photo-gate input {
+  width: 100%;
+  min-height: 42px;
+  padding: 0 14px;
+  border: 1px solid var(--line-strong);
+  border-radius: 10px;
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.9);
+  font: inherit;
+}
+
+.photo-gate button {
+  min-width: 82px;
+  min-height: 42px;
+  border: 1px solid var(--ink);
+  border-radius: 10px;
+  color: var(--paper);
+  background: var(--ink);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.photo-gate input:focus-visible,
+.photo-gate button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.photo-gate-message {
+  min-height: 1.5em;
+  margin: 10px 0 0;
+  color: #a5413a;
+  font-size: 13px;
 }
 
 .photo-gallery {

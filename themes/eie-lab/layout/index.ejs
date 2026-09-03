@@ -44,11 +44,11 @@
     </div>
     <div class="post-list">
       <% site.posts.sort('date', -1).limit(6).forEach(function(post) { %>
-        <article class="post-card">
+        <a class="post-card" href="<%- url_for(post.path) %>">
           <time datetime="<%= post.date.format('YYYY-MM-DD') %>"><%= post.date.format('YYYY.MM.DD') %></time>
-          <h3><a href="<%- url_for(post.path) %>"><%= post.title %></a></h3>
+          <h3><%= post.title %></h3>
           <p><%= strip_html(post.excerpt || post.content).replace(/\s+/g, ' ').substring(0, 118) %></p>
-        </article>
+        </a>
       <% }) %>
     </div>
   </div>

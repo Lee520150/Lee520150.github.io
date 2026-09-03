@@ -6,9 +6,23 @@
 <section class="photo-hero">
   <p class="eyebrow">Gallery</p>
   <h1>摄影</h1>
-  <p>这里放你的摄影作品。照片会从 <code>source/images/photos</code> 自动读取，故事和具体信息可以慢慢补。</p>
+  <p>摄影作品暂时设置为密码访问。</p>
 </section>
 
+<section class="photo-gate" data-photo-gate>
+  <p class="eyebrow">Private Gallery</p>
+  <h2>输入密码查看摄影作品</h2>
+  <form data-photo-gate-form>
+    <label for="photo-password">访问密码</label>
+    <div class="photo-gate-row">
+      <input id="photo-password" name="password" type="password" inputmode="numeric" autocomplete="current-password" required>
+      <button type="submit">进入</button>
+    </div>
+    <p class="photo-gate-message" data-photo-gate-message role="alert" aria-live="polite"></p>
+  </form>
+</section>
+
+<div class="photo-private-content" data-photo-private-content hidden>
 <% if (photos.length) { %>
   <section class="photo-gallery" aria-label="Photography works">
     <% photos.forEach(function(photo) { %>
@@ -73,10 +87,10 @@
         image.alt = photo.title;
         number.textContent = `Photo ${String(photo.index).padStart(2, "0")}`;
         title.textContent = photo.title;
-        date.textContent = photo.date || "待补充";
-        location.textContent = photo.location || "待补充";
-        camera.textContent = photo.camera || "待补充";
-        story.textContent = photo.story || "这里以后写这张照片的故事。";
+        date.textContent = photo.date || "未记录";
+        location.textContent = photo.location || "未记录";
+        camera.textContent = photo.camera || "未记录";
+        story.textContent = photo.story || "未记录";
 
         if (typeof dialog.showModal === "function") {
           dialog.showModal();
@@ -102,3 +116,4 @@
     <p>把照片放进 <code>D:\blog\source\images\photos</code> 后，运行更新脚本，这里就会自动出现作品。</p>
   </section>
 <% } %>
+</div>
