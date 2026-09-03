@@ -567,6 +567,7 @@ p {
 .content-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 280px;
+  align-items: start;
   gap: 22px;
   padding: 12px 0 68px;
 }
@@ -641,15 +642,15 @@ p {
 
 .rail-nav {
   display: grid;
-  gap: 10px;
+  gap: 8px;
 }
 
 .rail-link {
   position: relative;
   display: grid;
-  gap: 8px;
+  gap: 5px;
   min-height: auto;
-  padding: 18px 42px 18px 18px;
+  padding: 16px 40px 15px 18px;
   color: var(--muted);
   transition: transform 160ms ease, color 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
 }
@@ -657,7 +658,7 @@ p {
 .rail-link::after {
   content: ">";
   position: absolute;
-  top: 19px;
+  top: 17px;
   right: 18px;
   color: var(--faint);
   font-family: Inter, "Microsoft YaHei", sans-serif;
@@ -676,14 +677,14 @@ p {
 
 .rail-link strong {
   color: var(--ink);
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.35;
 }
 
 .rail-link small {
   color: var(--muted);
-  font-size: 12px;
-  line-height: 1.65;
+  font-size: 11px;
+  line-height: 1.5;
 }
 
 .rail-link:hover {
