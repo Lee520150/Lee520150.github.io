@@ -588,6 +588,12 @@ p {
   gap: 12px;
 }
 
+.side-index {
+  align-self: start;
+  position: sticky;
+  top: 22px;
+}
+
 .post-card {
   display: block;
   padding: 20px;
@@ -633,19 +639,68 @@ p {
   color: var(--muted);
 }
 
+.rail-nav {
+  display: grid;
+  gap: 10px;
+}
+
 .rail-link {
-  display: block;
-  padding: 15px 16px;
+  position: relative;
+  display: grid;
+  gap: 8px;
+  min-height: auto;
+  padding: 18px 42px 18px 18px;
   color: var(--muted);
-  font-size: 14px;
+  transition: transform 160ms ease, color 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.rail-link::after {
+  content: ">";
+  position: absolute;
+  top: 19px;
+  right: 18px;
+  color: var(--faint);
+  font-family: Inter, "Microsoft YaHei", sans-serif;
+  font-size: 18px;
   font-weight: 700;
-  transition: transform 160ms ease, color 160ms ease, border-color 160ms ease;
+  transition: color 160ms ease, transform 160ms ease;
+}
+
+.rail-kicker {
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.rail-link strong {
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.35;
+}
+
+.rail-link small {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.65;
 }
 
 .rail-link:hover {
   color: var(--ink);
   border-color: var(--line-strong);
+  box-shadow: var(--shadow);
   transform: translateX(3px);
+}
+
+.rail-link:hover::after {
+  color: var(--accent);
+  transform: translateX(2px);
+}
+
+.rail-link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
 }
 
 .article,
@@ -2253,6 +2308,10 @@ p {
 
   .content-grid {
     grid-template-columns: 1fr;
+  }
+
+  .side-index {
+    position: static;
   }
 
   .home-intro {
