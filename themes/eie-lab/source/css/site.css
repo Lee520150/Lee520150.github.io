@@ -587,6 +587,61 @@ p {
   color: var(--muted);
 }
 
+.article-body .spoiler-block {
+  position: relative;
+  margin: 28px 0 34px;
+  padding: 22px 26px;
+  overflow: hidden;
+  border: 1px solid rgba(30, 28, 25, 0.12);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.76), rgba(244, 241, 235, 0.58)),
+    repeating-linear-gradient(135deg, rgba(30, 28, 25, 0.055) 0 5px, rgba(30, 28, 25, 0.018) 5px 10px);
+  box-shadow: 0 18px 46px rgba(52, 45, 35, 0.06);
+  cursor: default;
+}
+
+.article-body .spoiler-block::before {
+  content: "Sensitive";
+  position: absolute;
+  right: 18px;
+  top: 14px;
+  z-index: 2;
+  padding: 5px 8px;
+  border: 1px solid rgba(30, 28, 25, 0.1);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.82);
+  color: var(--faint);
+  font-family: Inter, "Microsoft YaHei", sans-serif;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.article-body .spoiler-block > * {
+  filter: blur(7px);
+  opacity: 0.42;
+  user-select: none;
+  transition: filter 220ms ease, opacity 220ms ease, transform 220ms ease;
+}
+
+.article-body .spoiler-block:hover::before,
+.article-body .spoiler-block:focus-within::before,
+.article-body .spoiler-block:focus::before {
+  opacity: 0;
+  transform: translateY(-4px);
+}
+
+.article-body .spoiler-block:hover > *,
+.article-body .spoiler-block:focus-within > *,
+.article-body .spoiler-block:focus > * {
+  filter: blur(0);
+  opacity: 1;
+  user-select: text;
+}
+
 .article-body figure.highlight {
   position: relative;
   overflow: hidden;
