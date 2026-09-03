@@ -15,9 +15,7 @@ categories:
 
 **最后特别鸣谢刘王二位将军提供的灵感!**
 
-{% note 温馨提示 color:warning %}
-本篇非《序》
-{% endnote %}
+温馨提示：*本篇非《序》*
 
 <!-- more -->
 
