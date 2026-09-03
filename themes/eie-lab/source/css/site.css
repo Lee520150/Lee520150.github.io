@@ -653,6 +653,60 @@ p {
   border-bottom: 1px solid var(--accent);
 }
 
+.article-body > table {
+  width: 100%;
+  margin: 28px 0 34px;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 16px 38px rgba(52, 45, 35, 0.045);
+}
+
+.article-body > table th,
+.article-body > table td {
+  padding: 13px 16px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+.article-body > table th {
+  color: var(--accent);
+  font-family: Inter, "Microsoft YaHei", sans-serif;
+  font-size: 12px;
+  font-weight: 850;
+  line-height: 1.5;
+  text-transform: uppercase;
+  background: rgba(244, 241, 235, 0.9);
+}
+
+.article-body > table td {
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.article-body > table tr:last-child td {
+  border-bottom: 0;
+}
+
+.article-body > table th:last-child,
+.article-body > table td:last-child {
+  border-right: 0;
+}
+
+.article-body > table tr:nth-child(even) td {
+  background: rgba(244, 241, 235, 0.34);
+}
+
+.article-body > table code {
+  white-space: nowrap;
+}
+
 .article-body blockquote {
   margin-left: 0;
   padding: 2px 0 2px 18px;
