@@ -1,13 +1,7 @@
 # 把照片放到 source/images/photos 后，可以在这里给照片补信息。
 # file 必须和照片文件名完全一致。
 #
-# 示例：
-# - file: campus-evening.jpg
-#   title: 傍晚的校园
-#   date: 2026.08
-#   location: 学校
-#   camera: 手机 / 相机型号
-#   story: 这里写这张照片背后的故事。
+
 
 # - file: 
 #   title: 
@@ -42,7 +36,7 @@
   date: 2026.8.6
   location: 北海公园
   camera: Nikon Z50Ⅱ
-  story: 本身是想排除古今的对比反差感，构图上有待考究，感觉有些平庸了（实际是在山上也没啥空间），然后就是由于不知道是阴天还是什么原因，画面整体偏暗，还有就是超级大暗角。
+  story: 杀马特团长，我将军呢！本身是想拍出古今的对比反差感，构图上有待考究，感觉有些平庸了（实际是在山上也没啥空间）。
 
 - file: DSC_1222.jpg
   title: 让我们荡起双桨
@@ -98,7 +92,7 @@
   date: 2026.1.17
   location: 雍和宫
   camera: Nikon Z50Ⅱ
-  story: 名家解析：狮子像被砍头了--from Cap \n ps:抖音上说雍和宫扶正缘，去一次寡三年，已经寡了小两年了（
+  story: 名家解析：狮子像被砍头了--from Cap  ps:抖音上说雍和宫扶正缘，去一次寡三年，已经寡了小两年了（
 
 - file: DSC_0348-已增强-降噪.JPG
   title: 华严寺鼓楼
