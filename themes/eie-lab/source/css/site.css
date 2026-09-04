@@ -1207,6 +1207,11 @@ p {
   --badge-right: #f1f5f9;
 }
 
+.site-badge.is-rss {
+  --badge-left: #854d0e;
+  --badge-right: #ffedd5;
+}
+
 .site-badge.is-field {
   --badge-left: #513b16;
   --badge-right: #f8e7b8;
