@@ -14,7 +14,7 @@ function Invoke-GitPushWithRetry {
 
   for ($attempt = 1; $attempt -le $MaxAttempts; $attempt++) {
     Write-Host ("Push attempt {0}/{1}..." -f $attempt, $MaxAttempts) -ForegroundColor DarkGray
-    git push origin main
+    git -c http.sslBackend=openssl push origin main
     if ($LASTEXITCODE -eq 0) {
       return
     }
@@ -34,7 +34,7 @@ function Test-RemoteSynced {
     throw "Unable to read local Git commit (exit code $LASTEXITCODE)."
   }
 
-  $remoteLine = git ls-remote origin refs/heads/main
+  $remoteLine = git -c http.sslBackend=openssl ls-remote origin refs/heads/main
   if ($LASTEXITCODE -ne 0) {
     Write-Host "Could not verify GitHub remote right now, but push has finished." -ForegroundColor Yellow
     return
