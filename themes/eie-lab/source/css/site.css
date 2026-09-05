@@ -1077,18 +1077,28 @@ p {
 
 .site-footer {
   min-height: 92px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 20px 28px;
+  padding: 28px 0;
   border-top: 1px solid var(--line);
   color: var(--muted);
   font-size: 14px;
 }
 
+.site-footer > div:first-child {
+  grid-column: 1 / -1;
+}
+
 .site-footer strong {
   display: block;
   color: var(--ink);
+}
+
+.site-footer > a {
+  align-self: center;
+  color: var(--muted);
 }
 
 .site-liveness {
@@ -1118,9 +1128,9 @@ p {
 .site-badges {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 7px;
-  max-width: 680px;
+  max-width: none;
 }
 
 .site-badge {
@@ -2303,9 +2313,13 @@ p {
   }
 
   .site-footer {
-    align-items: flex-start;
-    flex-direction: column;
+    grid-template-columns: 1fr;
+    align-items: start;
     padding: 24px 0;
+  }
+
+  .site-footer > a {
+    justify-self: start;
   }
 
   .site-badges {
