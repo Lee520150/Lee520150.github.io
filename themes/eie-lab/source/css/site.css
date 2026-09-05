@@ -1076,10 +1076,11 @@ p {
 }
 
 .site-footer {
+  position: relative;
   min-height: 92px;
   display: grid;
   gap: 22px;
-  padding: 28px 0;
+  padding: 28px 92px 28px 0;
   border-top: 1px solid var(--line);
   color: var(--muted);
   font-size: 14px;
@@ -1098,7 +1099,9 @@ p {
 }
 
 .footer-main > a {
-  padding-top: 4px;
+  position: absolute;
+  top: 28px;
+  right: 0;
   color: var(--muted);
   font-size: 15px;
   transition: color 160ms ease;
@@ -1137,7 +1140,7 @@ p {
   flex-wrap: wrap;
   justify-content: flex-start;
   gap: 7px;
-  max-width: 760px;
+  max-width: 620px;
 }
 
 .site-badge {
@@ -2332,6 +2335,7 @@ p {
   }
 
   .footer-main > a {
+    position: static;
     padding-top: 0;
   }
 
