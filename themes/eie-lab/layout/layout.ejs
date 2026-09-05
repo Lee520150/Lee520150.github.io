@@ -50,22 +50,25 @@
         </main>
 
         <footer class="site-footer">
-          <div>
-            <strong><%= config.title %></strong>
-            <span>Engineering notes and personal fragments.</span>
-            <div class="site-liveness" aria-label="Site liveness">
-              <p>
-                总访问量
-                <strong id="busuanzi_container_site_pv" class="site-count">
-                  <span id="busuanzi_value_site_pv">--</span>
-                </strong>
-                次。
-              </p>
-              <p>
-                在世界边缘存活了
-                <strong data-site-uptime>-- 天 -- 小时 -- 分 -- 秒</strong>。
-              </p>
+          <div class="footer-main">
+            <div>
+              <strong><%= config.title %></strong>
+              <span>Engineering notes and personal fragments.</span>
+              <div class="site-liveness" aria-label="Site liveness">
+                <p>
+                  总访问量
+                  <strong id="busuanzi_container_site_pv" class="site-count">
+                    <span id="busuanzi_value_site_pv">--</span>
+                  </strong>
+                  次。
+                </p>
+                <p>
+                  在世界边缘存活了
+                  <strong data-site-uptime>-- 天 -- 小时 -- 分 -- 秒</strong>。
+                </p>
+              </div>
             </div>
+            <a href="<%- url_for('/about/') %>">About</a>
           </div>
           <div class="site-badges" aria-label="Site status badges">
             <a class="site-badge is-hexo" href="https://hexo.io/" target="_blank" rel="noopener" title="Built with Hexo">
@@ -87,7 +90,6 @@
               <b><span class="badge-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M10.2 9.6a3 3 0 1 0 0 4.8M16.2 9.6a3 3 0 1 0 0 4.8"/></svg></span>License</b><em>BY-NC-SA 4.0</em>
             </a>
           </div>
-          <a href="<%- url_for('/about/') %>">About</a>
         </footer>
       </div>
     </div>

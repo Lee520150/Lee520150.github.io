@@ -1078,17 +1078,18 @@ p {
 .site-footer {
   min-height: 92px;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: end;
-  gap: 20px 28px;
+  gap: 22px;
   padding: 28px 0;
   border-top: 1px solid var(--line);
   color: var(--muted);
   font-size: 14px;
 }
 
-.site-footer > div:first-child {
-  grid-column: 1 / -1;
+.footer-main {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 28px;
 }
 
 .site-footer strong {
@@ -1096,9 +1097,15 @@ p {
   color: var(--ink);
 }
 
-.site-footer > a {
-  align-self: center;
+.footer-main > a {
+  padding-top: 4px;
   color: var(--muted);
+  font-size: 15px;
+  transition: color 160ms ease;
+}
+
+.footer-main > a:hover {
+  color: var(--ink);
 }
 
 .site-liveness {
@@ -1130,7 +1137,7 @@ p {
   flex-wrap: wrap;
   justify-content: flex-start;
   gap: 7px;
-  max-width: none;
+  max-width: 760px;
 }
 
 .site-badge {
@@ -2318,8 +2325,14 @@ p {
     padding: 24px 0;
   }
 
-  .site-footer > a {
-    justify-self: start;
+  .footer-main {
+    width: 100%;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .footer-main > a {
+    padding-top: 0;
   }
 
   .site-badges {
