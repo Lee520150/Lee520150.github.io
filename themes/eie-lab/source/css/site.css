@@ -753,6 +753,14 @@ p {
   text-indent: 2em;
 }
 
+.article-body img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  margin: 24px auto;
+}
+
 .article-body li p,
 .article-body blockquote p {
   text-indent: 0;
