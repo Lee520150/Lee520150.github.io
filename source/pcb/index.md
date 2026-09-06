@@ -1,11 +1,11 @@
 ---
-title: PCB 设计
+title: 技术分享
 date: 2026-08-24 00:00:00
 layout: section
-section_category: PCB
+section_category: 技术分享
 ---
 
-<!-- 这里以后可以放 PCB 设计相关内容：原理图、封装、布局布线、打样、焊接、调试和版本记录。
+<!-- 这里以后可以放技术学习、项目实践、硬件设计、嵌入式开发和问题复盘。
 
 ## 推荐记录方式
 

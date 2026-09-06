@@ -1,4 +1,4 @@
-param(
+﻿param(
   [string]$Title,
   [string]$Section
 )
@@ -20,18 +20,19 @@ if ([string]::IsNullOrWhiteSpace($Title)) {
 }
 
 $sections = [ordered]@{
-  "1" = @{ Name = "Notes"; Tag = "Notes"; Path = "/notes/" }
-  "2" = @{ Name = "PCB"; Tag = "PCB"; Path = "/pcb/" }
-  "3" = @{ Name = "Projects"; Tag = "Projects"; Path = "/projects/" }
-  "4" = @{ Name = "Life"; Tag = "Life"; Path = "/life/" }
-  "5" = @{ Name = "Blog"; Tag = "Blog"; Path = "/" }
+  "1" = @{ Label = "Notes"; Categories = @("Notes"); Tag = "Notes"; Path = "/notes/" }
+  "2" = @{ Label = "技术分享 / PCB"; Categories = @("技术分享", "PCB"); Tag = "PCB"; Path = "/categories/PCB/" }
+  "3" = @{ Label = "技术分享 / 《单片机基础》助教记录"; Categories = @("技术分享", "《单片机基础》助教记录"); Tag = "《单片机基础》助教记录"; Path = "/categories/《单片机基础》助教记录/" }
+  "4" = @{ Label = "Projects"; Categories = @("Projects"); Tag = "Projects"; Path = "/projects/" }
+  "5" = @{ Label = "Life"; Categories = @("Life"); Tag = "Life"; Path = "/life/" }
+  "6" = @{ Label = "Blog"; Categories = @("Blog"); Tag = "Blog"; Path = "/" }
 }
 
 if ([string]::IsNullOrWhiteSpace($Section)) {
   Write-Host ""
   Write-Host "Choose section:" -ForegroundColor Cyan
   foreach ($key in $sections.Keys) {
-    Write-Host ("  " + $key + ". " + $sections[$key].Name)
+    Write-Host ("  " + $key + ". " + $sections[$key].Label)
   }
   $Section = Read-Host "Section number"
 }
@@ -63,7 +64,9 @@ $lines.Add("---")
 $lines.Add("title: " + $Title)
 $lines.Add("date: " + $date)
 $lines.Add("categories:")
-$lines.Add("  - " + $selected.Name)
+foreach ($category in $selected.Categories) {
+  $lines.Add("  - " + $category)
+}
 $lines.Add("tags:")
 $lines.Add("  - " + $selected.Tag)
 $lines.Add("---")
@@ -79,7 +82,7 @@ Set-Content -LiteralPath $created -Value $lines -Encoding UTF8
 Write-Host ""
 Write-Host "Created:" -ForegroundColor Green
 Write-Host $created
-Write-Host ("Section: " + $selected.Name) -ForegroundColor Green
+Write-Host ("Section: " + $selected.Label) -ForegroundColor Green
 Write-Host ("It will appear under: " + $selected.Path)
 
 Write-Host ""

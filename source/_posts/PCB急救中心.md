@@ -2,6 +2,7 @@
 title: PCB急救中心
 date: 2026-09-05T12:00:00+08:00
 categories:
+  - 技术分享
   - PCB
 tags:
   - PCB

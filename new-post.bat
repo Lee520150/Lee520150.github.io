@@ -1,6 +1,6 @@
 @echo off
 chcp 65001 >nul
-title New Blog Post
+title New Blog Post - COLORFULIFE
 
 cd /d "%~dp0"
 
