@@ -24,18 +24,18 @@ tags:
 
 1.STM32Cube_FW_F1_V1.8.5固件包的保存地址是否有严格限制：原则上是没有的，因为后续在STM32CubeMX生成文件时可以进行手动调整，如果不想以后每次都手动调整的话就按照指导书进行配置即可。
 
-![alt text](image.png)
+![软件配置界面](/images/posts/lesson-0/image.png)
 
 2.注册机keygen.exe找不到怎么办：已知课程组提供的资料包中具有该程序，所以请关闭所有杀毒软件（Windows安全中心，360杀毒等等），如下图所示。进行重新尝试如果依旧没有及时联系老师和助教。
 
-![alt text](image-1.png)
+![注册机文件位置](/images/posts/lesson-0/image-1.png)
 
 3.AC5编译器下载过程中没有ARMCC文件夹怎么办：新建一个，亲测直接强制写一个路径该下载程序不会自动新建对应文件夹。后续下载过程中如果出现了warning内容多数情况下直接next就可以。
 
 4.打不开 Project -> Manage -> Project Items怎么办，该选项显示为灰色：如果已经完成了前面的相关配置可以去打开资料包中的程序，对应地址为："timer_pwm\MDK-ARM\timer_pwm.uvprojx"，打开之后即可解决该问题。对于如何打开该工程参见下图：
 
-![alt text](image-2.png)
+![工程文件位置](/images/posts/lesson-0/image-2.png)
 
-![alt text](image-3.png)
+![打开工程示例](/images/posts/lesson-0/image-3.png)
 
 <!-- more -->
