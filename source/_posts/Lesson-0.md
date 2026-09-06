@@ -16,7 +16,9 @@ tags:
 
 ### 配置环境时请全程不要使用中文路径，关闭Windows安全中心病毒保护相关功能
 
-### 如果您发现自己的用户名或系统根目录等重要名称是中文的，那么可以权衡一下是进行一下尝试去配置环境还是直接想办法把它改成英文的，根据经验来讲大概率配置是不成功的。
+### 如果您发现自己的用户名或系统根目录等重要名称是中文的，那么可以权衡一下是尝试去配置环境还是直接想办法把它改成英文的，根据经验来讲大概率配置是不成功的。
+
+### If you find that important names such as your username or system root directory are in Chinese, you may consider whether to attempt environment configuration or directly change them to English. Experience suggests the former approach will most likely fail.
 
 首先，对于参加过蓝桥杯单片机组的同学一定对本学期使用的Keil软件不陌生，但是也需要安装软件包里面的Keil，因为Keil C51并不能进行STM32的开发，需要下载Keil MDK-ARM。
 
@@ -37,5 +39,8 @@ tags:
 ![工程文件位置](/images/posts/lesson-0/image-2.png)
 
 ![打开工程示例](/images/posts/lesson-0/image-3.png)
+
+
+**祝各位顺利**
 
 <!-- more -->
