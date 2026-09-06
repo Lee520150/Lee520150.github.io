@@ -40,7 +40,18 @@ tags:
 
 ![打开工程示例](/images/posts/lesson-0/image-3.png)
 
+之后的创建新的工程等步骤严格按照指导书中的进行即可，在使用CubeMX的过程中我们需要注意几个问题。
 
-**祝各位顺利**
+1.在进行“generate code”时，我们要选取工程的地址，请保持工程的路径清晰干净，如下图所示，不要产生杂乱的嵌套，会影响到相关文件的读取。
+
+![工程生成路径](/images/posts/lesson-0/image-4.png)
+
+2.如果需要使用 CubeMX 重新生成代码，手动添加的代码应放在 USER CODE BEGIN 和 USER CODE END 标记之间。放在这些标记之外的代码，重新生成工程时可能会被 CubeMX 覆盖。while 循环中的代码应写在 USER CODE BEGIN WHILE 与 USER CODE END WHILE 之间。
+
+![代码书写位置](/images/posts/lesson-0/image-5.png)
+
+尽量不要出现whil里面明明是空的却问是代码哪里有问题的状况。
+
+## **祝各位顺利**
 
 <!-- more -->
