@@ -28,7 +28,7 @@
         login: 'enable',
         pageSize: 10,
         wordLimit: 2000,
-        emoji: false,
+        emoji: true,
         search: false,
         imageUploader: false,
         highlighter: false,
