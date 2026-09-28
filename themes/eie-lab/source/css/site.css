@@ -773,12 +773,6 @@ p {
   overflow-wrap: anywhere;
 }
 
-.article-comments > h2 {
-  margin: 0 0 24px;
-  font-size: 22px;
-  line-height: 1.4;
-}
-
 .article-comments .comments-status {
   color: var(--muted);
   font-size: 14px;
@@ -803,9 +797,54 @@ p {
   border-radius: 8px;
 }
 
+.article-comments .wl-reaction {
+  margin: 0 0 30px;
+  padding: 8px 12px 28px;
+  border-bottom: 1px solid var(--line);
+}
+
+.article-comments .wl-reaction-title {
+  margin: 8px auto 20px;
+  color: var(--ink);
+  font-family: "Noto Serif SC", "Microsoft YaHei", serif;
+  font-size: 20px;
+}
+
+.article-comments .wl-reaction-list {
+  gap: clamp(10px, 2.4vw, 24px);
+  padding: 6px;
+}
+
+.article-comments .wl-reaction-img {
+  width: 46px;
+  height: 46px;
+}
+
+.article-comments .wl-reaction-votes {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--paper);
+}
+
+.article-comments .wl-reaction-item.active .wl-reaction-votes {
+  color: var(--paper);
+  background: var(--accent);
+}
+
 .article-comments .wl-content img {
   max-width: 100%;
   height: auto;
+}
+
+@media (max-width: 580px) {
+  .article-comments .wl-reaction {
+    padding-inline: 0;
+  }
+
+  .article-comments .wl-reaction-img {
+    width: 34px;
+    height: 34px;
+  }
 }
 
 .article-body img {

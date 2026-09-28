@@ -1,13 +1,12 @@
 <% const comments = waline_options(page); %>
 <% if (comments) { %>
-  <section class="article-comments" aria-labelledby="comments-heading"
+  <section class="article-comments" aria-label="文章评论"
     data-waline data-server-url="<%= comments.serverURL %>"
     data-comment-path="<%= comments.path %>" data-client-url="<%= comments.clientURL %>">
-    <h2 id="comments-heading">评论</h2>
     <p class="comments-status" role="status" aria-live="polite">正在加载评论…</p>
     <button class="comments-retry" type="button" hidden>重新加载</button>
     <div id="waline" aria-busy="true"></div>
     <noscript>请启用 JavaScript 查看和发表评论。</noscript>
   </section>
-  <script defer src="<%- url_for('/js/comments.js') %>?v=20260928-1"></script>
+  <script defer src="<%- url_for('/js/comments.js') %>?v=20260929-reactions-1"></script>
 <% } %>

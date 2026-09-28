@@ -8,6 +8,47 @@
   let loading = false;
   let loaded = false;
 
+  function installSecureLikeProxy(serverURL) {
+    if (window.__colorLabSecureLikeProxy) return;
+
+    const server = new URL(serverURL, window.location.href);
+    const nativeFetch = window.fetch.bind(window);
+    window.fetch = function secureLikeFetch(input, init = {}) {
+      const requestUrl = typeof input === 'string' ? input : input.url;
+      const method = (init.method || (typeof input === 'string' ? 'GET' : input.method)).toUpperCase();
+
+      if (method === 'PUT' && typeof init.body === 'string') {
+        try {
+          const url = new URL(requestUrl, window.location.href);
+          const body = JSON.parse(init.body);
+          const keys = Object.keys(body);
+          const isCommentLike =
+            url.origin === server.origin &&
+            /^\/api\/comment\/\d+\/?$/u.test(url.pathname) &&
+            keys.length === 1 &&
+            keys[0] === 'like' &&
+            typeof body.like === 'boolean';
+
+          if (isCommentLike) {
+            url.pathname = url.pathname.replace('/api/comment/', '/api/secure-like/');
+            return nativeFetch(url.toString(), init);
+          }
+        } catch {
+          // Let Waline handle requests that are not the simple like action.
+        }
+      }
+
+      return nativeFetch(input, init);
+    };
+    window.__colorLabSecureLikeProxy = true;
+
+    const migrationKey = 'color-lab-secure-like-v1';
+    if (!localStorage.getItem(migrationKey)) {
+      localStorage.removeItem('WALINE_LIKE');
+      localStorage.setItem(migrationKey, 'done');
+    }
+  }
+
   async function loadComments() {
     if (loading || loaded) return;
     loading = true;
@@ -18,6 +59,7 @@
 
     try {
       const { init } = await import(section.dataset.clientUrl);
+      installSecureLikeProxy(section.dataset.serverUrl);
       init({
         el: container,
         serverURL: section.dataset.serverUrl,
@@ -33,10 +75,13 @@
         imageUploader: false,
         highlighter: false,
         texRenderer: false,
-        reaction: false,
+        reaction: true,
         pageview: false,
         comment: false,
-        locale: { placeholder: '留下你的想法…' }
+        locale: {
+          placeholder: '留下你的想法…',
+          reactionTitle: '你认为这篇文章怎么样？'
+        }
       });
       loaded = true;
       status.hidden = true;
