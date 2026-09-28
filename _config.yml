@@ -110,6 +110,11 @@ ignore:
 ## Themes: https://hexo.io/themes/
 theme: eie-lab
 
+# Waline: enable after deploying the server and creating the administrator.
+waline:
+  enable: true
+  server_url: 'https://colorfulife-waline.vercel.app'
+
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:

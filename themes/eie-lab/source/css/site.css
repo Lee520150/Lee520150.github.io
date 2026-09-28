@@ -753,6 +753,61 @@ p {
   text-indent: 2em;
 }
 
+.article-comments {
+  --waline-theme-color: var(--accent);
+  --waline-active-color: var(--ink);
+  --waline-color: var(--text);
+  --waline-bg-color: var(--paper);
+  --waline-bg-color-light: var(--paper-soft);
+  --waline-bg-color-hover: var(--accent-soft);
+  --waline-border-color: var(--line-strong);
+  --waline-dark-grey: var(--muted);
+  --waline-light-grey: var(--muted);
+  --waline-font-size: 16px;
+  --waline-box-shadow: none;
+  min-width: 0;
+  margin-top: 48px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+  text-indent: 0;
+  overflow-wrap: anywhere;
+}
+
+.article-comments > h2 {
+  margin: 0 0 24px;
+  font-size: 22px;
+  line-height: 1.4;
+}
+
+.article-comments .comments-status {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.comments-retry {
+  padding: 8px 16px;
+  border: 1px solid var(--line-strong);
+  border-radius: 6px;
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+  cursor: pointer;
+}
+
+.article-comments :focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.article-comments .wl-panel {
+  border-radius: 8px;
+}
+
+.article-comments .wl-content img {
+  max-width: 100%;
+  height: auto;
+}
+
 .article-body img {
   display: block;
   width: auto;
